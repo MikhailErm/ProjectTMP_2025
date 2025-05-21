@@ -1,0 +1,333 @@
+EchoServer_autogen/timestamp: \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/CMakeCXXCompiler.cmake.in \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/CMakeCXXCompilerABI.cpp \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/CMakeCXXInformation.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/CMakeCommonLanguageInclude.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/CMakeCompilerIdDetection.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/CMakeDetermineCXXCompiler.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/CMakeDetermineCompiler.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/CMakeDetermineCompilerABI.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/CMakeDetermineCompilerId.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/CMakeDetermineCompilerSupport.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/CMakeDetermineRCCompiler.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/CMakeDetermineSystem.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/CMakeFindBinUtils.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/CMakeFindDependencyMacro.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/CMakeGenericSystem.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/CMakeInitializeConfigs.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/CMakeLanguageInformation.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/CMakeNinjaFindMake.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/CMakeParseImplicitIncludeInfo.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/CMakeParseImplicitLinkInfo.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/CMakeParseLibraryArchitecture.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/CMakeRCCompiler.cmake.in \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/CMakeRCInformation.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/CMakeSystem.cmake.in \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/CMakeSystemSpecificInformation.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/CMakeSystemSpecificInitialize.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/CMakeTestCXXCompiler.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/CMakeTestCompilerCommon.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/CMakeTestRCCompiler.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/CheckCXXCompilerFlag.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/CheckCXXSourceCompiles.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/CheckIncludeFileCXX.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/CheckLibraryExists.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/Compiler/ADSP-DetermineCompiler.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/Compiler/ARMCC-DetermineCompiler.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/Compiler/ARMClang-DetermineCompiler.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/Compiler/AppleClang-DetermineCompiler.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/Compiler/Borland-DetermineCompiler.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/Compiler/CMakeCommonCompilerMacros.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/Compiler/Clang-DetermineCompiler.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/Compiler/Clang-DetermineCompilerInternal.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/Compiler/Cray-DetermineCompiler.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/Compiler/CrayClang-DetermineCompiler.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/Compiler/Embarcadero-DetermineCompiler.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/Compiler/Fujitsu-DetermineCompiler.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/Compiler/GHS-DetermineCompiler.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/Compiler/HP-CXX-DetermineCompiler.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/Compiler/IAR-DetermineCompiler.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/Compiler/Intel-DetermineCompiler.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/Compiler/MSVC-CXX-CXXImportStd.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/Compiler/MSVC-CXX.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/Compiler/MSVC-DetermineCompiler.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/Compiler/MSVC.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/Compiler/NVHPC-DetermineCompiler.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/Compiler/NVIDIA-DetermineCompiler.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/Compiler/OrangeC-DetermineCompiler.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/Compiler/PGI-DetermineCompiler.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/Compiler/PathScale-DetermineCompiler.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/Compiler/SCO-DetermineCompiler.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/Compiler/TI-DetermineCompiler.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/Compiler/TIClang-DetermineCompiler.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/Compiler/Tasking-DetermineCompiler.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/Compiler/Watcom-DetermineCompiler.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/Compiler/XL-CXX-DetermineCompiler.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/FindPackageHandleStandardArgs.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/FindPackageMessage.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/FindThreads.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/GNUInstallDirs.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/Internal/CMakeCXXLinkerInformation.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/Internal/CMakeCommonLinkerInformation.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/Internal/CMakeDetermineLinkerId.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/Internal/CMakeInspectCXXLinker.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/Internal/CheckCompilerFlag.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/Internal/CheckFlagCommonConfig.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/Internal/CheckSourceCompiles.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/Internal/FeatureTesting.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/Linker/MSVC-CXX.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/Linker/MSVC.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/Platform/Linker/Windows-MSVC-CXX.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/Platform/Linker/Windows-MSVC.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/Platform/Windows-Determine-CXX.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/Platform/Windows-Initialize.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/Platform/Windows-MSVC-CXX.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/Platform/Windows-MSVC.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/Platform/Windows.cmake \
+	C:/Program\ Files/CMake/share/cmake-4.0/Modules/Platform/WindowsPaths.cmake \
+	C:/Users/BlackDoDo/Documents/GitHub/ProjectTMP_2025/CMakeLists.txt \
+	C:/Users/BlackDoDo/Documents/GitHub/ProjectTMP_2025/build/Desktop_Qt_6_8_2_MSVC2022_64bit-Debug/.qtc/package-manager/auto-setup.cmake \
+	C:/Users/BlackDoDo/Documents/GitHub/ProjectTMP_2025/build/Desktop_Qt_6_8_2_MSVC2022_64bit-Debug/CMakeFiles/4.0.2/CMakeCXXCompiler.cmake \
+	C:/Users/BlackDoDo/Documents/GitHub/ProjectTMP_2025/build/Desktop_Qt_6_8_2_MSVC2022_64bit-Debug/CMakeFiles/4.0.2/CMakeRCCompiler.cmake \
+	C:/Users/BlackDoDo/Documents/GitHub/ProjectTMP_2025/build/Desktop_Qt_6_8_2_MSVC2022_64bit-Debug/CMakeFiles/4.0.2/CMakeSystem.cmake \
+	C:/Users/BlackDoDo/Documents/GitHub/ProjectTMP_2025/include/func2serv.h \
+	C:/Users/BlackDoDo/Documents/GitHub/ProjectTMP_2025/include/mytcpserver.h \
+	C:/Users/BlackDoDo/Documents/GitHub/ProjectTMP_2025/src/func2serv.cpp \
+	C:/Users/BlackDoDo/Documents/GitHub/ProjectTMP_2025/src/main.cpp \
+	C:/Users/BlackDoDo/Documents/GitHub/ProjectTMP_2025/src/mytcpserver.cpp \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/QObject \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/q20functional.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/q20memory.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/q20type_traits.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/q23utility.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qalgorithms.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qanystringview.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qarraydata.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qarraydataops.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qarraydatapointer.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qassert.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qatomic.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qatomic_cxx11.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qbasicatomic.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qbindingstorage.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qbytearray.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qbytearrayalgorithms.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qbytearraylist.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qbytearrayview.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qchar.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qcompare.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qcompare_impl.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qcomparehelpers.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qcompilerdetection.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qconfig.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qconstructormacros.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qcontainerfwd.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qcontainerinfo.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qcontainertools_impl.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qcontiguouscache.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qdarwinhelpers.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qdatastream.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qdebug.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qexceptionhandling.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qflags.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qfloat16.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qforeach.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qfunctionaltools_impl.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qfunctionpointer.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qgenericatomic.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qglobal.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qglobalstatic.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qhash.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qhashfunctions.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qiodevice.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qiodevicebase.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qiterable.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qiterator.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qlatin1stringview.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qlist.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qlogging.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qmalloc.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qmap.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qmath.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qmetacontainer.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qmetatype.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qminmax.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qnamespace.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qnumeric.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qobject.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qobject_impl.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qobjectdefs.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qobjectdefs_impl.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qoverload.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qpair.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qprocessordetection.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qrefcount.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qscopedpointer.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qscopeguard.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qset.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qshareddata.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qshareddata_impl.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qsharedpointer.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qsharedpointer_impl.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qstring.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qstringalgorithms.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qstringbuilder.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qstringconverter.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qstringconverter_base.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qstringfwd.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qstringlist.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qstringliteral.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qstringmatcher.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qstringtokenizer.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qstringview.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qswap.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qsysinfo.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qsystemdetection.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qtaggedpointer.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qtclasshelpermacros.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qtconfiginclude.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qtconfigmacros.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qtcore-config.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qtcoreexports.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qtdeprecationdefinitions.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qtdeprecationmarkers.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qtenvironmentvariables.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qtextstream.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qtmetamacros.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qtnoop.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qtpreprocessorsupport.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qtresource.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qttranslation.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qttypetraits.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qtversion.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qtversionchecks.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qtypeinfo.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qtypes.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qutf8stringview.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qvariant.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qvarlengtharray.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qversiontagging.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qxptype_traits.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtCore/qyieldcpu.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtNetwork/QTcpServer \
+	F:/qt/6.8.2/msvc2022_64/include/QtNetwork/QTcpSocket \
+	F:/qt/6.8.2/msvc2022_64/include/QtNetwork/qabstractsocket.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtNetwork/qhostaddress.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtNetwork/qtcpserver.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtNetwork/qtcpsocket.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtNetwork/qtnetwork-config.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtNetwork/qtnetworkexports.h \
+	F:/qt/6.8.2/msvc2022_64/include/QtNetwork/qtnetworkglobal.h \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6/FindWrapAtomic.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6/Qt6Config.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6/Qt6ConfigExtras.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6/Qt6ConfigVersion.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6/Qt6ConfigVersionImpl.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6/Qt6Dependencies.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6/Qt6Targets.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6/Qt6VersionlessAliasTargets.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6/QtFeature.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6/QtFeatureCommon.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6/QtInstallPaths.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6/QtPublicAppleHelpers.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6/QtPublicCMakeHelpers.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6/QtPublicCMakeVersionHelpers.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6/QtPublicExternalProjectHelpers.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6/QtPublicFinalizerHelpers.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6/QtPublicFindPackageHelpers.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6/QtPublicGitHelpers.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6/QtPublicPluginHelpers.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6/QtPublicSbomAttributionHelpers.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6/QtPublicSbomCpeHelpers.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6/QtPublicSbomDepHelpers.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6/QtPublicSbomFileHelpers.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6/QtPublicSbomGenerationHelpers.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6/QtPublicSbomHelpers.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6/QtPublicSbomLicenseHelpers.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6/QtPublicSbomOpsHelpers.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6/QtPublicSbomPurlHelpers.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6/QtPublicSbomPythonHelpers.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6/QtPublicSbomSystemDepHelpers.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6/QtPublicTargetHelpers.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6/QtPublicTestHelpers.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6/QtPublicToolHelpers.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6/QtPublicWalkLibsHelpers.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6Core/Qt6CoreAdditionalTargetInfo.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6Core/Qt6CoreConfig.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6Core/Qt6CoreConfigExtras.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6Core/Qt6CoreConfigVersion.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6Core/Qt6CoreConfigVersionImpl.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6Core/Qt6CoreDependencies.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6Core/Qt6CoreMacros.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6Core/Qt6CoreTargets-debug.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6Core/Qt6CoreTargets-relwithdebinfo.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6Core/Qt6CoreTargets.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6Core/Qt6CoreVersionlessAliasTargets.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsAdditionalTargetInfo.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsConfig.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsConfigVersion.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsConfigVersionImpl.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsDependencies.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsTargets-debug.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsTargets-relwithdebinfo.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsTargets.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsVersionlessTargets.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateAdditionalTargetInfo.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateConfig.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateConfigVersion.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateConfigVersionImpl.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateTargets-debug.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateTargets-relwithdebinfo.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateTargets.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateVersionlessAliasTargets.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6Network/Qt6NetworkAdditionalTargetInfo.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6Network/Qt6NetworkConfig.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6Network/Qt6NetworkConfigVersion.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6Network/Qt6NetworkConfigVersionImpl.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6Network/Qt6NetworkDependencies.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6Network/Qt6NetworkPlugins.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6Network/Qt6NetworkTargets-debug.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6Network/Qt6NetworkTargets-relwithdebinfo.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6Network/Qt6NetworkTargets.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6Network/Qt6NetworkVersionlessAliasTargets.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6Network/Qt6QNLMNIPluginAdditionalTargetInfo.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6Network/Qt6QNLMNIPluginConfig.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6Network/Qt6QNLMNIPluginTargets-debug.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6Network/Qt6QNLMNIPluginTargets-relwithdebinfo.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6Network/Qt6QNLMNIPluginTargets.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6Network/Qt6QSchannelBackendPluginAdditionalTargetInfo.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6Network/Qt6QSchannelBackendPluginConfig.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6Network/Qt6QSchannelBackendPluginTargets-debug.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6Network/Qt6QSchannelBackendPluginTargets-relwithdebinfo.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6Network/Qt6QSchannelBackendPluginTargets.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6Network/Qt6QTlsBackendCertOnlyPluginAdditionalTargetInfo.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6Network/Qt6QTlsBackendCertOnlyPluginConfig.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6Network/Qt6QTlsBackendCertOnlyPluginTargets-debug.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6Network/Qt6QTlsBackendCertOnlyPluginTargets-relwithdebinfo.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6Network/Qt6QTlsBackendCertOnlyPluginTargets.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginAdditionalTargetInfo.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginConfig.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginTargets-debug.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginTargets-relwithdebinfo.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginTargets.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6ZlibPrivate/Qt6ZlibPrivateAdditionalTargetInfo.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6ZlibPrivate/Qt6ZlibPrivateConfig.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6ZlibPrivate/Qt6ZlibPrivateConfigVersion.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6ZlibPrivate/Qt6ZlibPrivateConfigVersionImpl.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6ZlibPrivate/Qt6ZlibPrivateTargets.cmake \
+	F:/qt/6.8.2/msvc2022_64/lib/cmake/Qt6ZlibPrivate/Qt6ZlibPrivateVersionlessAliasTargets.cmake \
+	C:/Program\ Files/CMake/bin/cmake.exe

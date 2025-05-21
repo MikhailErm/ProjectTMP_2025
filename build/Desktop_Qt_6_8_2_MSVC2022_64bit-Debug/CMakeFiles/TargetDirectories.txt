@@ -1,0 +1,5 @@
+C:/Users/BlackDoDo/Documents/GitHub/ProjectTMP_2025/build/Desktop_Qt_6_8_2_MSVC2022_64bit-Debug/CMakeFiles/EchoServer.dir
+C:/Users/BlackDoDo/Documents/GitHub/ProjectTMP_2025/build/Desktop_Qt_6_8_2_MSVC2022_64bit-Debug/CMakeFiles/edit_cache.dir
+C:/Users/BlackDoDo/Documents/GitHub/ProjectTMP_2025/build/Desktop_Qt_6_8_2_MSVC2022_64bit-Debug/CMakeFiles/rebuild_cache.dir
+C:/Users/BlackDoDo/Documents/GitHub/ProjectTMP_2025/build/Desktop_Qt_6_8_2_MSVC2022_64bit-Debug/CMakeFiles/EchoServer_autogen_timestamp_deps.dir
+C:/Users/BlackDoDo/Documents/GitHub/ProjectTMP_2025/build/Desktop_Qt_6_8_2_MSVC2022_64bit-Debug/CMakeFiles/EchoServer_autogen.dir
