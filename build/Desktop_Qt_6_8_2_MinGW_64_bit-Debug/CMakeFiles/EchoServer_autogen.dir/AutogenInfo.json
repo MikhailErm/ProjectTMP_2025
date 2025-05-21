@@ -150,37 +150,7 @@
 		"C:/Qt/6.8.2/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginTargets.cmake",
 		"C:/Qt/6.8.2/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginTargets-relwithdebinfo.cmake",
 		"C:/Qt/6.8.2/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginAdditionalTargetInfo.cmake",
-		"C:/Qt/6.8.2/mingw_64/lib/cmake/Qt6Network/Qt6NetworkVersionlessAliasTargets.cmake",
-		"C:/Qt/6.8.2/mingw_64/lib/cmake/Qt6Sql/Qt6SqlConfigVersion.cmake",
-		"C:/Qt/6.8.2/mingw_64/lib/cmake/Qt6Sql/Qt6SqlConfigVersionImpl.cmake",
-		"C:/Qt/6.8.2/mingw_64/lib/cmake/Qt6Sql/Qt6SqlConfig.cmake",
-		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake",
-		"C:/Qt/6.8.2/mingw_64/lib/cmake/Qt6Sql/Qt6SqlDependencies.cmake",
-		"C:/Qt/6.8.2/mingw_64/lib/cmake/Qt6Sql/Qt6SqlTargets.cmake",
-		"C:/Qt/6.8.2/mingw_64/lib/cmake/Qt6Sql/Qt6SqlTargets-relwithdebinfo.cmake",
-		"C:/Qt/6.8.2/mingw_64/lib/cmake/Qt6Sql/Qt6SqlAdditionalTargetInfo.cmake",
-		"C:/Qt/6.8.2/mingw_64/lib/cmake/Qt6Sql/Qt6SqlPlugins.cmake",
-		"C:/Qt/6.8.2/mingw_64/lib/cmake/Qt6Sql/Qt6QMimerSQLDriverPluginConfig.cmake",
-		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake",
-		"C:/Qt/6.8.2/mingw_64/lib/cmake/Qt6Sql/Qt6QMimerSQLDriverPluginTargets.cmake",
-		"C:/Qt/6.8.2/mingw_64/lib/cmake/Qt6Sql/Qt6QMimerSQLDriverPluginTargets-relwithdebinfo.cmake",
-		"C:/Qt/6.8.2/mingw_64/lib/cmake/Qt6Sql/Qt6QMimerSQLDriverPluginAdditionalTargetInfo.cmake",
-		"C:/Qt/6.8.2/mingw_64/lib/cmake/Qt6Sql/Qt6QODBCDriverPluginConfig.cmake",
-		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake",
-		"C:/Qt/6.8.2/mingw_64/lib/cmake/Qt6Sql/Qt6QODBCDriverPluginTargets.cmake",
-		"C:/Qt/6.8.2/mingw_64/lib/cmake/Qt6Sql/Qt6QODBCDriverPluginTargets-relwithdebinfo.cmake",
-		"C:/Qt/6.8.2/mingw_64/lib/cmake/Qt6Sql/Qt6QODBCDriverPluginAdditionalTargetInfo.cmake",
-		"C:/Qt/6.8.2/mingw_64/lib/cmake/Qt6Sql/Qt6QPSQLDriverPluginConfig.cmake",
-		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake",
-		"C:/Qt/6.8.2/mingw_64/lib/cmake/Qt6Sql/Qt6QPSQLDriverPluginTargets.cmake",
-		"C:/Qt/6.8.2/mingw_64/lib/cmake/Qt6Sql/Qt6QPSQLDriverPluginTargets-relwithdebinfo.cmake",
-		"C:/Qt/6.8.2/mingw_64/lib/cmake/Qt6Sql/Qt6QPSQLDriverPluginAdditionalTargetInfo.cmake",
-		"C:/Qt/6.8.2/mingw_64/lib/cmake/Qt6Sql/Qt6QSQLiteDriverPluginConfig.cmake",
-		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake",
-		"C:/Qt/6.8.2/mingw_64/lib/cmake/Qt6Sql/Qt6QSQLiteDriverPluginTargets.cmake",
-		"C:/Qt/6.8.2/mingw_64/lib/cmake/Qt6Sql/Qt6QSQLiteDriverPluginTargets-relwithdebinfo.cmake",
-		"C:/Qt/6.8.2/mingw_64/lib/cmake/Qt6Sql/Qt6QSQLiteDriverPluginAdditionalTargetInfo.cmake",
-		"C:/Qt/6.8.2/mingw_64/lib/cmake/Qt6Sql/Qt6SqlVersionlessAliasTargets.cmake"
+		"C:/Qt/6.8.2/mingw_64/lib/cmake/Qt6Network/Qt6NetworkVersionlessAliasTargets.cmake"
 	],
 	"CMAKE_SOURCE_DIR" : "D:/TMP/Server/EchoServer",
 	"CROSS_CONFIG" : false,
@@ -188,12 +158,6 @@
 	"DEP_FILE_RULE_NAME" : "EchoServer_autogen/timestamp",
 	"HEADERS" : 
 	[
-		[
-			"D:/TMP/Server/EchoServer/include/databasemanager.h",
-			"MU",
-			"6YEA5652QU/moc_databasemanager.cpp",
-			null
-		],
 		[
 			"D:/TMP/Server/EchoServer/include/func2serv.h",
 			"MU",
@@ -215,7 +179,6 @@
 		"MINGW_HAS_SECURE_API=1",
 		"QT_CORE_LIB",
 		"QT_NETWORK_LIB",
-		"QT_SQL_LIB",
 		"UNICODE",
 		"WIN32",
 		"WIN64",
@@ -237,7 +200,6 @@
 		"C:/Qt/6.8.2/mingw_64/include",
 		"C:/Qt/6.8.2/mingw_64/include/QtCore",
 		"C:/Qt/6.8.2/mingw_64/mkspecs/win32-g++",
-		"C:/Qt/6.8.2/mingw_64/include/QtSql",
 		"C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++",
 		"C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32",
 		"C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward",
@@ -277,7 +239,6 @@
 	"SETTINGS_FILE" : "D:/TMP/Server/EchoServer/build/Desktop_Qt_6_8_2_MinGW_64_bit-Debug/CMakeFiles/EchoServer_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
-		[ "D:/TMP/Server/EchoServer/src/databasemanager.cpp", "MU", null ],
 		[ "D:/TMP/Server/EchoServer/src/func2serv.cpp", "MU", null ],
 		[ "D:/TMP/Server/EchoServer/src/main.cpp", "MU", null ],
 		[ "D:/TMP/Server/EchoServer/src/mytcpserver.cpp", "MU", null ]

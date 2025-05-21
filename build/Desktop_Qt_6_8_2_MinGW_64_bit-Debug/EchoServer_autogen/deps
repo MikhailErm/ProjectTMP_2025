@@ -208,31 +208,6 @@ EchoServer_autogen/timestamp: \
 	C:/Qt/6.8.2/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginConfig.cmake \
 	C:/Qt/6.8.2/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginTargets-relwithdebinfo.cmake \
 	C:/Qt/6.8.2/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginTargets.cmake \
-	C:/Qt/6.8.2/mingw_64/lib/cmake/Qt6Sql/Qt6QMimerSQLDriverPluginAdditionalTargetInfo.cmake \
-	C:/Qt/6.8.2/mingw_64/lib/cmake/Qt6Sql/Qt6QMimerSQLDriverPluginConfig.cmake \
-	C:/Qt/6.8.2/mingw_64/lib/cmake/Qt6Sql/Qt6QMimerSQLDriverPluginTargets-relwithdebinfo.cmake \
-	C:/Qt/6.8.2/mingw_64/lib/cmake/Qt6Sql/Qt6QMimerSQLDriverPluginTargets.cmake \
-	C:/Qt/6.8.2/mingw_64/lib/cmake/Qt6Sql/Qt6QODBCDriverPluginAdditionalTargetInfo.cmake \
-	C:/Qt/6.8.2/mingw_64/lib/cmake/Qt6Sql/Qt6QODBCDriverPluginConfig.cmake \
-	C:/Qt/6.8.2/mingw_64/lib/cmake/Qt6Sql/Qt6QODBCDriverPluginTargets-relwithdebinfo.cmake \
-	C:/Qt/6.8.2/mingw_64/lib/cmake/Qt6Sql/Qt6QODBCDriverPluginTargets.cmake \
-	C:/Qt/6.8.2/mingw_64/lib/cmake/Qt6Sql/Qt6QPSQLDriverPluginAdditionalTargetInfo.cmake \
-	C:/Qt/6.8.2/mingw_64/lib/cmake/Qt6Sql/Qt6QPSQLDriverPluginConfig.cmake \
-	C:/Qt/6.8.2/mingw_64/lib/cmake/Qt6Sql/Qt6QPSQLDriverPluginTargets-relwithdebinfo.cmake \
-	C:/Qt/6.8.2/mingw_64/lib/cmake/Qt6Sql/Qt6QPSQLDriverPluginTargets.cmake \
-	C:/Qt/6.8.2/mingw_64/lib/cmake/Qt6Sql/Qt6QSQLiteDriverPluginAdditionalTargetInfo.cmake \
-	C:/Qt/6.8.2/mingw_64/lib/cmake/Qt6Sql/Qt6QSQLiteDriverPluginConfig.cmake \
-	C:/Qt/6.8.2/mingw_64/lib/cmake/Qt6Sql/Qt6QSQLiteDriverPluginTargets-relwithdebinfo.cmake \
-	C:/Qt/6.8.2/mingw_64/lib/cmake/Qt6Sql/Qt6QSQLiteDriverPluginTargets.cmake \
-	C:/Qt/6.8.2/mingw_64/lib/cmake/Qt6Sql/Qt6SqlAdditionalTargetInfo.cmake \
-	C:/Qt/6.8.2/mingw_64/lib/cmake/Qt6Sql/Qt6SqlConfig.cmake \
-	C:/Qt/6.8.2/mingw_64/lib/cmake/Qt6Sql/Qt6SqlConfigVersion.cmake \
-	C:/Qt/6.8.2/mingw_64/lib/cmake/Qt6Sql/Qt6SqlConfigVersionImpl.cmake \
-	C:/Qt/6.8.2/mingw_64/lib/cmake/Qt6Sql/Qt6SqlDependencies.cmake \
-	C:/Qt/6.8.2/mingw_64/lib/cmake/Qt6Sql/Qt6SqlPlugins.cmake \
-	C:/Qt/6.8.2/mingw_64/lib/cmake/Qt6Sql/Qt6SqlTargets-relwithdebinfo.cmake \
-	C:/Qt/6.8.2/mingw_64/lib/cmake/Qt6Sql/Qt6SqlTargets.cmake \
-	C:/Qt/6.8.2/mingw_64/lib/cmake/Qt6Sql/Qt6SqlVersionlessAliasTargets.cmake \
 	C:/Qt/6.8.2/mingw_64/lib/cmake/Qt6ZlibPrivate/Qt6ZlibPrivateAdditionalTargetInfo.cmake \
 	C:/Qt/6.8.2/mingw_64/lib/cmake/Qt6ZlibPrivate/Qt6ZlibPrivateConfig.cmake \
 	C:/Qt/6.8.2/mingw_64/lib/cmake/Qt6ZlibPrivate/Qt6ZlibPrivateConfigVersion.cmake \
@@ -481,10 +456,8 @@ EchoServer_autogen/timestamp: \
 	D:/TMP/Server/EchoServer/build/Desktop_Qt_6_8_2_MinGW_64_bit-Debug/CMakeFiles/3.29.3/CMakeRCCompiler.cmake \
 	D:/TMP/Server/EchoServer/build/Desktop_Qt_6_8_2_MinGW_64_bit-Debug/CMakeFiles/3.29.3/CMakeSystem.cmake \
 	D:/TMP/Server/EchoServer/build/Desktop_Qt_6_8_2_MinGW_64_bit-Debug/EchoServer_autogen/moc_predefs.h \
-	D:/TMP/Server/EchoServer/include/databasemanager.h \
 	D:/TMP/Server/EchoServer/include/func2serv.h \
 	D:/TMP/Server/EchoServer/include/mytcpserver.h \
-	D:/TMP/Server/EchoServer/src/databasemanager.cpp \
 	D:/TMP/Server/EchoServer/src/func2serv.cpp \
 	D:/TMP/Server/EchoServer/src/main.cpp \
 	D:/TMP/Server/EchoServer/src/mytcpserver.cpp \

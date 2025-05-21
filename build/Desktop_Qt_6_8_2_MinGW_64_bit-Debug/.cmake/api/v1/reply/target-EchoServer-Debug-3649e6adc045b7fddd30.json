@@ -26,14 +26,14 @@
 		"files" : 
 		[
 			"CMakeLists.txt",
-			"C:/Qt/6.8.2/mingw_64/lib/cmake/Qt6Network/Qt6NetworkTargets.cmake",
-			"C:/Qt/6.8.2/mingw_64/lib/cmake/Qt6Network/Qt6NetworkConfig.cmake",
-			"C:/Qt/6.8.2/mingw_64/lib/cmake/Qt6/Qt6Config.cmake",
 			"C:/Qt/6.8.2/mingw_64/lib/cmake/Qt6Core/Qt6CoreTargets.cmake",
 			"C:/Qt/6.8.2/mingw_64/lib/cmake/Qt6Core/Qt6CoreConfig.cmake",
 			"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake",
 			"C:/Qt/6.8.2/mingw_64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake",
-			"C:/Qt/6.8.2/mingw_64/lib/cmake/Qt6Network/Qt6NetworkDependencies.cmake"
+			"C:/Qt/6.8.2/mingw_64/lib/cmake/Qt6Network/Qt6NetworkDependencies.cmake",
+			"C:/Qt/6.8.2/mingw_64/lib/cmake/Qt6Network/Qt6NetworkConfig.cmake",
+			"C:/Qt/6.8.2/mingw_64/lib/cmake/Qt6/Qt6Config.cmake",
+			"C:/Qt/6.8.2/mingw_64/lib/cmake/Qt6Network/Qt6NetworkTargets.cmake"
 		],
 		"nodes" : 
 		[
@@ -43,109 +43,109 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 35,
+				"line" : 34,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 46,
+				"line" : 49,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 39,
+				"line" : 41,
 				"parent" : 0
 			},
 			{
 				"command" : 5,
 				"file" : 0,
-				"line" : 12,
+				"line" : 13,
 				"parent" : 0
 			},
 			{
-				"file" : 3,
+				"file" : 7,
 				"parent" : 4
 			},
 			{
 				"command" : 5,
-				"file" : 3,
+				"file" : 7,
 				"line" : 190,
 				"parent" : 5
 			},
 			{
-				"file" : 2,
+				"file" : 6,
 				"parent" : 6
 			},
 			{
 				"command" : 4,
-				"file" : 2,
-				"line" : 55,
+				"file" : 6,
+				"line" : 43,
 				"parent" : 7
 			},
 			{
-				"file" : 1,
+				"file" : 5,
 				"parent" : 8
+			},
+			{
+				"command" : 7,
+				"file" : 5,
+				"line" : 45,
+				"parent" : 9
+			},
+			{
+				"command" : 6,
+				"file" : 4,
+				"line" : 145,
+				"parent" : 10
+			},
+			{
+				"command" : 5,
+				"file" : 3,
+				"line" : 76,
+				"parent" : 11
+			},
+			{
+				"file" : 2,
+				"parent" : 12
+			},
+			{
+				"command" : 4,
+				"file" : 2,
+				"line" : 57,
+				"parent" : 13
+			},
+			{
+				"file" : 1,
+				"parent" : 14
 			},
 			{
 				"command" : 3,
 				"file" : 1,
 				"line" : 61,
-				"parent" : 9
-			},
-			{
-				"command" : 4,
-				"file" : 2,
-				"line" : 43,
-				"parent" : 7
-			},
-			{
-				"file" : 8,
-				"parent" : 11
-			},
-			{
-				"command" : 7,
-				"file" : 8,
-				"line" : 45,
-				"parent" : 12
-			},
-			{
-				"command" : 6,
-				"file" : 7,
-				"line" : 145,
-				"parent" : 13
-			},
-			{
-				"command" : 5,
-				"file" : 6,
-				"line" : 76,
-				"parent" : 14
-			},
-			{
-				"file" : 5,
 				"parent" : 15
 			},
 			{
 				"command" : 4,
-				"file" : 5,
-				"line" : 57,
-				"parent" : 16
+				"file" : 6,
+				"line" : 55,
+				"parent" : 7
 			},
 			{
-				"file" : 4,
+				"file" : 8,
 				"parent" : 17
 			},
 			{
 				"command" : 3,
-				"file" : 4,
+				"file" : 8,
 				"line" : 61,
 				"parent" : 18
 			},
 			{
 				"command" : 8,
 				"file" : 0,
-				"line" : 21,
+				"line" : 22,
 				"parent" : 0
 			}
 		]
@@ -172,10 +172,6 @@
 				{
 					"backtrace" : 3,
 					"define" : "QT_NETWORK_LIB"
-				},
-				{
-					"backtrace" : 3,
-					"define" : "QT_SQL_LIB"
 				},
 				{
 					"backtrace" : 3,
@@ -231,11 +227,6 @@
 					"backtrace" : 3,
 					"isSystem" : true,
 					"path" : "C:/Qt/6.8.2/mingw_64/mkspecs/win32-g++"
-				},
-				{
-					"backtrace" : 3,
-					"isSystem" : true,
-					"path" : "C:/Qt/6.8.2/mingw_64/include/QtSql"
 				}
 			],
 			"language" : "CXX",
@@ -244,7 +235,6 @@
 				0,
 				1,
 				2,
-				3,
 				4
 			]
 		}
@@ -252,11 +242,11 @@
 	"dependencies" : 
 	[
 		{
-			"backtrace" : 0,
-			"id" : "EchoServer_autogen::@6890427a1f51a3e7e1df"
+			"id" : "EchoServer_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
 		},
 		{
-			"id" : "EchoServer_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
+			"backtrace" : 0,
+			"id" : "EchoServer_autogen::@6890427a1f51a3e7e1df"
 		}
 	],
 	"id" : "EchoServer::@6890427a1f51a3e7e1df",
@@ -284,27 +274,22 @@
 			},
 			{
 				"backtrace" : 3,
-				"fragment" : "C:\\Qt\\6.8.2\\mingw_64\\lib\\libQt6Sql.a",
-				"role" : "libraries"
-			},
-			{
-				"backtrace" : 10,
-				"fragment" : "-lws2_32",
-				"role" : "libraries"
-			},
-			{
-				"backtrace" : 3,
 				"fragment" : "C:\\Qt\\6.8.2\\mingw_64\\lib\\libQt6Core.a",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 19,
+				"backtrace" : 16,
 				"fragment" : "-lmpr",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 19,
+				"backtrace" : 16,
 				"fragment" : "-luserenv",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 19,
+				"fragment" : "-lws2_32",
 				"role" : "libraries"
 			},
 			{
@@ -330,7 +315,6 @@
 				0,
 				1,
 				2,
-				3,
 				4
 			]
 		},
@@ -338,23 +322,22 @@
 			"name" : "Header Files",
 			"sourceIndexes" : 
 			[
-				5,
-				6,
-				7
+				3,
+				5
 			]
 		},
 		{
 			"name" : "",
 			"sourceIndexes" : 
 			[
-				8
+				6
 			]
 		},
 		{
 			"name" : "CMake Rules",
 			"sourceIndexes" : 
 			[
-				9
+				7
 			]
 		}
 	],
@@ -381,29 +364,18 @@
 		},
 		{
 			"backtrace" : 1,
+			"path" : "include/mytcpserver.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "src/func2serv.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "src/databasemanager.cpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"path" : "include/mytcpserver.h",
-			"sourceGroupIndex" : 1
-		},
-		{
-			"backtrace" : 1,
 			"path" : "include/func2serv.h",
-			"sourceGroupIndex" : 1
-		},
-		{
-			"backtrace" : 1,
-			"path" : "include/databasemanager.h",
 			"sourceGroupIndex" : 1
 		},
 		{

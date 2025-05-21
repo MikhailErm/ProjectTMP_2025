@@ -49,13 +49,13 @@
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 50,
+				"line" : 49,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 42,
+				"line" : 41,
 				"parent" : 0
 			},
 			{
@@ -235,7 +235,7 @@
 				0,
 				1,
 				2,
-				4
+				5
 			]
 		}
 	],
@@ -315,7 +315,7 @@
 				0,
 				1,
 				2,
-				4
+				5
 			]
 		},
 		{
@@ -323,22 +323,21 @@
 			"sourceIndexes" : 
 			[
 				3,
-				5,
-				6
+				4
 			]
 		},
 		{
 			"name" : "",
 			"sourceIndexes" : 
 			[
-				7
+				6
 			]
 		},
 		{
 			"name" : "CMake Rules",
 			"sourceIndexes" : 
 			[
-				8
+				7
 			]
 		}
 	],
@@ -370,19 +369,14 @@
 		},
 		{
 			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "src/func2serv.cpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
 			"path" : "include/func2serv.h",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 1,
-			"path" : "include/databasemanager.h",
-			"sourceGroupIndex" : 1
+			"compileGroupIndex" : 0,
+			"path" : "src/func2serv.cpp",
+			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 0,

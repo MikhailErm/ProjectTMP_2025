@@ -3570,18 +3570,6 @@
 			"value" : "ON"
 		},
 		{
-			"name" : "QT_FEATURE_sqlmodel",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Qt feature: sqlmodel (from target Qt6::Sql)"
-				}
-			],
-			"type" : "INTERNAL",
-			"value" : "ON"
-		},
-		{
 			"name" : "QT_FEATURE_sse2",
 			"properties" : 
 			[
@@ -4228,18 +4216,6 @@
 			],
 			"type" : "PATH",
 			"value" : "C:/Qt/6.8.2/mingw_64/lib/cmake/Qt6Network"
-		},
-		{
-			"name" : "Qt6Sql_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "The directory containing a CMake configuration file for Qt6Sql."
-				}
-			],
-			"type" : "PATH",
-			"value" : "C:/Qt/6.8.2/mingw_64/lib/cmake/Qt6Sql"
 		},
 		{
 			"name" : "Qt6ZlibPrivate_DIR",
