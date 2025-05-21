@@ -30,7 +30,7 @@ void MyTcpServer::slotNewConnection()
     connect(mTcpSocket, &QTcpSocket::readyRead, this, &MyTcpServer::slotServerRead);
     connect(mTcpSocket, &QTcpSocket::disconnected, this, &MyTcpServer::slotClientDisconnected);
 
-    mTcpSocket->write("Welcome to Command Server!\r\nPlease enter command (e.g. auth&login&password):\r\n");
+    mTcpSocket->write("\nPlease enter command (e.g. auth&login&password):\r\n");
 }
 
 void MyTcpServer::slotServerRead()
