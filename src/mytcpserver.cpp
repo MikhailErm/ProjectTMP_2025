@@ -101,7 +101,7 @@ void MyTcpServer::slotServerRead()
     if (decodedMessage.isEmpty()) return;
 
     // Передаём команду в функцию parse() для обработки (auth, register и т.д.)
-    QByteArray result = parse(decodedMessage, mTcpSocket->socketDescriptor());
+    QByteArray result = parsing(decodedMessage, mTcpSocket->socketDescriptor());
 
     // Отправляем результат клиенту + перевод строки
     mTcpSocket->write(result.append("\r\n"));

@@ -37,7 +37,7 @@ QByteArray auth(QStringList params) {
 
 //  Регистрация
 // Функция для регистрации нового пользователя
-QByteArray registerUser(QStringList params) {
+QByteArray reg(QStringList params) {
     // Проверка на наличие логина и пароля
     if (params.size() < 2) {
         return QByteArray("Error: missing login or password");
@@ -73,7 +73,7 @@ QByteArray registerUser(QStringList params) {
 
 // Обработка команд от клиента
 // Главная функция обработки текста команды
-QByteArray parse(QString msg, int sockId)
+QByteArray parsing(QString msg, int sockId)
 {
     // Разбиваем строку на параметры по символу "&"
     QStringList params = msg.split("&");
@@ -88,7 +88,7 @@ QByteArray parse(QString msg, int sockId)
     if (func == "auth") {
         return auth(params); // авторизация
     } else if (func == "register") {
-        return registerUser(params); // регистрация
+        return reg(params); // регистрация
     }
 
     // Если команда не распознана — возвращаем ошибку

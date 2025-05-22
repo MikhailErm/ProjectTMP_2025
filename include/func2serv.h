@@ -4,8 +4,9 @@
 #include <QByteArray>
 #include <QStringList>
 
-QByteArray parse(QString, int);
+QByteArray parsing(QString, int);
 QByteArray auth(QStringList);
-
+QByteArray reg(QStringList params);
+QByteArray lookallstat(QStringList value);
 
 #endif
