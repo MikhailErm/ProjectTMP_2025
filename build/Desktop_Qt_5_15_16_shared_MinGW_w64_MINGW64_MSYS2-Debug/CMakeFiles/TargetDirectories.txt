@@ -1,5 +1,0 @@
-C:/QT_projects/EchoServer/build/Desktop_Qt_5_15_16_shared_MinGW_w64_MINGW64_MSYS2-Debug/CMakeFiles/EchoServer.dir
-C:/QT_projects/EchoServer/build/Desktop_Qt_5_15_16_shared_MinGW_w64_MINGW64_MSYS2-Debug/CMakeFiles/edit_cache.dir
-C:/QT_projects/EchoServer/build/Desktop_Qt_5_15_16_shared_MinGW_w64_MINGW64_MSYS2-Debug/CMakeFiles/rebuild_cache.dir
-C:/QT_projects/EchoServer/build/Desktop_Qt_5_15_16_shared_MinGW_w64_MINGW64_MSYS2-Debug/CMakeFiles/EchoServer_autogen_timestamp_deps.dir
-C:/QT_projects/EchoServer/build/Desktop_Qt_5_15_16_shared_MinGW_w64_MINGW64_MSYS2-Debug/CMakeFiles/EchoServer_autogen.dir
