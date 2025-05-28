@@ -14,6 +14,8 @@ MyTcpServer::MyTcpServer(QObject *parent) : QObject(parent)
     // Создаём экземпляр TCP-сервера
     mTcpServer = new QTcpServer(this);
 
+    setClientStatesPointer(&clientStates);  // Мультиклиент
+
     // Подключаем сигнал "новое подключение" к слоту, который его обработает
     connect(mTcpServer, &QTcpServer::newConnection, this, &MyTcpServer::slotNewConnection);
 
@@ -35,24 +37,34 @@ MyTcpServer::~MyTcpServer()
 //  Слот: обработка нового подключения клиента
 void MyTcpServer::slotNewConnection()
 {
-    // Получаем сокет нового клиента
-    mTcpSocket = mTcpServer->nextPendingConnection();
+    QTcpSocket *clientSocket = mTcpServer->nextPendingConnection(); // Мультиклиент
+    int clientId = clientSocket->socketDescriptor();  // Мультиклиент
+
+    clients[clientId] = clientSocket;                 // Мультиклиент
+    clientStates[clientId] = ClientState();           // Мультиклиент
 
     // Подключаем сигнал "данные пришли от клиента" к нашему слоту обработки данных
-    connect(mTcpSocket, &QTcpSocket::readyRead, this, &MyTcpServer::slotServerRead);
+    connect(clientSocket, &QTcpSocket::readyRead, this, &MyTcpServer::slotServerRead); // Заменил на clientSocket (Мультиклиент)
 
     // Подключаем сигнал "клиент отключился" к слоту очистки
-    connect(mTcpSocket, &QTcpSocket::disconnected, this, &MyTcpServer::slotClientDisconnected);
+    connect(clientSocket, &QTcpSocket::disconnected, this, &MyTcpServer::slotClientDisconnected); // Заменил на clientSocket (Мультиклиент)
 
     // Отправляем приветственное сообщение и инструкцию клиенту
-    mTcpSocket->write("\nPlease enter command (e.g. auth&login&password):\r\n");
+    clientSocket->write("\nPlease enter command (e.g. auth&login&password):\r\n"); // Заменил на clientSocket (Мультиклиент)
+
+    qDebug() << "Client connected:" << clientId;      // Мультиклиент
 }
 
-// ===== Слот: обработка входящих данных от клиента =====
+//  Слот: обработка входящих данных от клиента
 void MyTcpServer::slotServerRead()
 {
+    QTcpSocket *clientSocket = qobject_cast<QTcpSocket*>(sender()); // Мультиклиент
+    if (!clientSocket) return; // Мультиклиент
+
+    int clientId = clientSocket->socketDescriptor();  // Мультиклиент
+
     // Читаем все данные из сокета
-    QByteArray buffer = mTcpSocket->readAll();
+    QByteArray buffer = clientSocket->readAll(); // Заменил на clientSocket (Мультиклиент)
 
     // Буферы для ответа (например, telnet-команды) и фактической команды пользователя
     QByteArray response;
@@ -88,28 +100,38 @@ void MyTcpServer::slotServerRead()
 
     // Отправляем ответ клиенту (например, отказ от telnet-опций)
     if (!response.isEmpty()) {
-        mTcpSocket->write(response);
+        clientSocket->write(response); // Заменил на clientSocket (Мультиклиент)
     }
 
     // Переводим команду из байтов в строку и убираем пробелы/переводы строки
     QString decodedMessage = QString::fromUtf8(actualMessage).trimmed();
 
     // Выводим команду в отладочную консоль
-    qDebug() << "Decoded message:" << decodedMessage;
+    qDebug() << "Client" << clientId << " decoded message:" << decodedMessage; // Мультиклиент
 
     // Если строка пустая — ничего не делаем
     if (decodedMessage.isEmpty()) return;
 
     // Передаём команду в функцию parse() для обработки (auth, register и т.д.)
-    QByteArray result = parsing(decodedMessage, mTcpSocket->socketDescriptor());
+    QByteArray result = parsing(decodedMessage, clientId); // Мультиклиент , заменил на clientId
 
     // Отправляем результат клиенту + перевод строки
-    mTcpSocket->write(result.append("\r\n"));
+    clientSocket->write(result.append("\r\n")); // Заменил на clientSocket (Мультиклиент)
 }
 
-//  Слот: обработка отключения клиента
+//  Слот: обработка отключения клиента (полностью переписан для мультиклиента)
 void MyTcpServer::slotClientDisconnected()
 {
-    // Закрываем соединение, когда клиент отключается
-    mTcpSocket->close();
+    QTcpSocket *clientSocket = qobject_cast<QTcpSocket*>(sender());
+    if (!clientSocket) return;
+
+    int clientId = clientSocket->socketDescriptor();  // Мультиклиент
+
+    qDebug() << "Client disconnected:" << clientId;
+
+    clients.remove(clientId);                         // Мультиклиент
+    clientStates.remove(clientId);                    // Мультиклиент
+
+    clientSocket->close();
+    clientSocket->deleteLater();
 }

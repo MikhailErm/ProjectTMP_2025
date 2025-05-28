@@ -10,7 +10,41 @@
 // Подключаем класс TCP-сокета (отвечает за связь с клиентом)
 #include <QTcpSocket>
 
-// Определяем класс TCP-сервера, наследующийся от QObject
+#include <QMap>
+
+// Структура состояния клиента
+struct ClientState { // Мультиклиент
+    bool isAuthorized = false;
+    int loginAttempt = 0;
+    QString login;
+};
+
+class MyTcpServer : public QObject
+{
+    Q_OBJECT
+public:
+    explicit MyTcpServer(QObject *parent = nullptr);
+    ~MyTcpServer();
+
+public slots:
+    void slotNewConnection();
+    void slotServerRead();
+    void slotClientDisconnected();
+
+private:
+    QTcpServer *mTcpServer;
+    QMap<int, QTcpSocket*> clients;           // (Мультиклиент) Сокеты клиентов по дескриптору
+    QMap<int, ClientState> clientStates;      // (Мультиклиент) Состояние каждого клиента
+};
+
+#endif // MYTCPSERVER_H
+
+
+
+
+
+
+/*// Определяем класс TCP-сервера, наследующийся от QObject
 class MyTcpServer : public QObject
 {
     Q_OBJECT  // Макрос Qt — включает поддержку сигналов и слотов
@@ -50,4 +84,4 @@ private:
 };
 
 // Завершаем защиту от повторного включения
-#endif
+#endif */

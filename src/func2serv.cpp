@@ -7,10 +7,25 @@
 #include <QSqlQuery>
 #include <QSqlError>
 #include <QVariant>
+#include <QMap> // Мультиклиент
+#include <QDebug> // Мультиклиент
+#include "mytcpserver.h" // Мультиклиент
+
+//Указатель на карту состояний клиентов  Мультиклиент
+static QMap<int, ClientState> *clientStatesPtr = nullptr;
+
+//Инициализация: вызывается в main или сервере Мультиклиент
+void setClientStatesPointer(QMap<int, ClientState> *states) {
+    clientStatesPtr = states;
+}
+
 
 //  Авторизация
 // Функция для проверки логина и пароля пользователя
-QByteArray auth(QStringList params) {
+QByteArray auth(QStringList params, int sockId) { //(Мультиклиент Добавил sockId
+    if (!clientStatesPtr || !clientStatesPtr->contains(sockId)) // Мультиклиент
+        return QByteArray("Internal server error"); // Мультиклиент
+
     // Проверка, что пришло хотя бы два параметра (логин и пароль)
     if (params.size() < 2) {
         return QByteArray("Error: missing login or password"); // Недостаточно аргументов
@@ -28,8 +43,11 @@ QByteArray auth(QStringList params) {
 
     // Если запрос выполнен и найдена запись — авторизация успешна
     if (query.exec() && query.next()) {
+        (*clientStatesPtr)[sockId].isAuthorized = true; // Мультиклиент
+        (*clientStatesPtr)[sockId].login = login; // Мультиклиент
         return QByteArray("Login successful! You can now use the echo server.");
     } else {
+        (*clientStatesPtr)[sockId].loginAttempt++; // Мультиклиент
         // Иначе — ошибка авторизации
         return QByteArray("Authorization failed. Try again.");
     }
@@ -37,8 +55,10 @@ QByteArray auth(QStringList params) {
 
 //  Регистрация
 // Функция для регистрации нового пользователя
-QByteArray reg(QStringList params) {
-    // Проверка на наличие логина и пароля
+QByteArray reg(QStringList params, int sockId) { //(Мультиклиент Добавил sockId
+    Q_UNUSED(sockId); // пока не нужен
+
+    // Проверка на наличие логина и парол
     if (params.size() < 2) {
         return QByteArray("Error: missing login or password");
     }
@@ -86,10 +106,14 @@ QByteArray parsing(QString msg, int sockId)
 
     // Выбор нужной функции по имени команды
     if (func == "auth") {
-        return auth(params); // авторизация
+        return auth(params, sockId); // авторизация (Мультиклиент Добавил sockId)
     } else if (func == "register") {
-        return reg(params); // регистрация
+        return reg(params, sockId); // регистрация (Мультиклиент Добавил sockId)
     }
+
+    if (clientStatesPtr && (*clientStatesPtr)[sockId].isAuthorized) { // Мультиклиент
+        return QByteArray("Echo: " + msg.toUtf8()); // Мультиклиент
+    }                                                  //Мультиклиент
 
     // Если команда не распознана — возвращаем ошибку
     return QByteArray("Unknown function");
