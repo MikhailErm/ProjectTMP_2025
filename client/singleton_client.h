@@ -1,58 +1,39 @@
-#ifndef SINGLETON_CLIENT_H
-#define SINGLETON_CLIENT_H
+#ifndef SINGLETON_H
+#define SINGLETON_H
 
 #include <QObject>
-#include <QTcpServer>
 #include <QTcpSocket>
-
-#include <QtNetwork>
 #include <QByteArray>
 #include <QDebug>
 
-// Предварительное объявление класса Singleton_client для использования в Singleton_clientDestroyer
-class Singleton_client;
+class SingletonClient;
 
-// Класс-разрушитель для корректного освобождения памяти синглтона
-class Singleton_clientDestroyer
-{
+class SingletonDestroyer {
 private:
-    Singleton_client* pInstance;  // Указатель на экземпляр синглтона
+    SingletonClient* p_instance;
 public:
-    ~Singleton_clientDestroyer() {
-        delete this->pInstance;  // Освобождение памяти при уничтожении разрушителя
-    }
-    void initialize(Singleton_client * p) {
-        this->pInstance = p;  // Инициализация указателя на синглтон
-    }
+    ~SingletonDestroyer() { delete p_instance; }
+    void initialize(SingletonClient* p) { p_instance = p; }
 };
 
-// Класс Singleton_client - реализация клиента как синглтона
-class Singleton_client: public QObject {
+class SingletonClient : public QObject {
+    Q_OBJECT
 private:
-    static Singleton_client* pInstance;  // Статический указатель на единственный экземпляр
-    void initTCP();  // Приватный метод для инициализации TCP соединения
-    static QTcpSocket* tcpInstance;  // Статический указатель на TCP сокет
-    static Singleton_clientDestroyer destroyer;  // Статический экземпляр разрушителя
-
+    static SingletonClient* p_instance;
+    static SingletonDestroyer destroyer;
+    QTcpSocket* mTcpSocket;
 protected:
-    Singleton_client();  // Защищенный конструктор
-    Singleton_client(const Singleton_client&) = delete;  // Запрет копирования
-    Singleton_client& operator = (Singleton_client &) = delete;  // Запрет присваивания
-    ~Singleton_client();  // Защищенный деструктор
-    friend class Singleton_clientDestroyer;  // Разрешаем разрушителю доступ к приватным членам
-
+    explicit SingletonClient(QObject *parent = nullptr);
+    SingletonClient(SingletonClient&) = delete;
+    ~SingletonClient();
+    friend class SingletonDestroyer;
 public:
-    // Статический метод для получения экземпляра синглтона
-    static Singleton_client* getInstance() {
-        if (!pInstance) {
-            pInstance = new Singleton_client();  // Создаем экземпляр, если его нет
-            destroyer.initialize(pInstance);     // Инициализируем разрушитель
-        }
-        return pInstance;
-    }
-
-    // Метод для выполнения запроса к серверу
-    QString doRequest(QByteArray request);
+    static SingletonClient* getInstance();
+    void send_msg_to_server(QString query);
+signals:
+    void message_from_server(QString msg);
+private slots:
+    void slotServerRead();
 };
 
-#endif // Singleton_client_H
+#endif // SINGLETON_H
