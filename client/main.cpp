@@ -1,6 +1,6 @@
 // Подключаем заголовочный файл нашей формы авторизации
 #include "authorization.h"
-
+#include <QDebug>
 // Подключаем основной заголовочный файл Qt для приложений
 #include <QApplication>
 
@@ -17,7 +17,14 @@ int main(int argc, char *argv[])
 
     // Показываем форму авторизации
     w.show();
+    // Получаем экземпляр SingletonClient
+    SingletonClient::getInstance();
 
+    // Пример отправки сообщения на сервер
+    std::string msg;
+    msg="hello";
+    SingletonClient::getInstance()->
+        send_msg_to_server(QString::fromStdString(msg));
     // Запускаем главный цикл обработки событий приложения
     // Этот вызов блокирует выполнение до закрытия приложения
     return a.exec();
