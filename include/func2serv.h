@@ -13,4 +13,4 @@ QByteArray reg(QStringList params, int sockId); // Добавли sockId (Мул
 
 void setClientStatesPointer(QMap<int, ClientState> *states); // Мультиклиент
 
-#endif
+#endif // FUNC2SERV_H

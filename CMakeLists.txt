@@ -9,11 +9,11 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
 
 # Пробуем найти Qt6, если не найден — пробуем Qt5
-find_package(Qt6 COMPONENTS Network Core Sql QUIET)  #  добавлен Sql
+find_package(Qt6 COMPONENTS Network Core Sql Test QUIET) #  добавлен Sql, добавлен Test
 if(Qt6_FOUND)
     set(USE_QT6 TRUE)
 else()
-    find_package(Qt5 REQUIRED COMPONENTS Network Core Sql)  #  добавлен Sql
+    find_package(Qt5 REQUIRED COMPONENTS Network Core Sql Test)#  добавлен Sql, добавлен Test
     set(USE_QT6 FALSE)
 endif()
 
@@ -47,3 +47,38 @@ if(WIN32)
         "$<$<CONFIG:Debug>:-Wl,--subsystem,console>"
     )
 endif()
+
+# Тесты
+enable_testing()
+
+file(GLOB UNITTEST_SOURCES UnitTest/*.cpp)
+source_group("UnitTest Files" FILES ${UNITTEST_SOURCES})
+
+add_executable(UnitTest
+    ${UNITTEST_SOURCES}
+    src/func2serv.cpp
+    src/databasemanager.cpp
+    include/func2serv.h
+    include/databasemanager.h
+)
+
+
+if(USE_QT6)
+    target_link_libraries(UnitTest PRIVATE
+        Qt6::Test
+        Qt6::Core
+        Qt6::Sql
+        Qt6::Network
+    )
+else()
+    target_link_libraries(UnitTest PRIVATE
+        Qt5::Test
+        Qt5::Core
+        Qt5::Sql
+        Qt5::Network
+    )
+endif()
+
+
+
+add_test(NAME UnitTest COMMAND UnitTest)

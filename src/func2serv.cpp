@@ -12,7 +12,7 @@
 #include "mytcpserver.h" // Мультиклиент
 
 //Указатель на карту состояний клиентов  Мультиклиент
-static QMap<int, ClientState> *clientStatesPtr = nullptr;
+QMap<int, ClientState>* clientStatesPtr = nullptr;
 
 //Инициализация: вызывается в main или сервере Мультиклиент
 void setClientStatesPointer(QMap<int, ClientState> *states) {
