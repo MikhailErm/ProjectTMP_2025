@@ -32,7 +32,8 @@ set(SOURCES
 )
 
 # Создаем исполняемый файл из исходников
-add_executable(EchoServer ${SOURCES})
+add_executable(EchoServer ${SOURCES}
+    include/sha256.hpp)
 
 # Линкуем необходимые Qt-библиотеки
 if(USE_QT6)
