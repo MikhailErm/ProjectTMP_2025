@@ -44,6 +44,7 @@ set(OLD_GLOB
   "C:/Users/BlackDoDo/Documents/qt_TiMP/client/build/Desktop_Qt_6_8_2_llvm_mingw_64_bit-Debug/CMakeFiles/4.0.2/CompilerIdCXX/CMakeCXXCompilerId.cpp"
   "C:/Users/BlackDoDo/Documents/qt_TiMP/client/build/Desktop_Qt_6_8_2_llvm_mingw_64_bit-Debug/client_autogen/EWIEGA46WW/moc_authorization.cpp"
   "C:/Users/BlackDoDo/Documents/qt_TiMP/client/build/Desktop_Qt_6_8_2_llvm_mingw_64_bit-Debug/client_autogen/EWIEGA46WW/moc_mainwindow.cpp"
+  "C:/Users/BlackDoDo/Documents/qt_TiMP/client/build/Desktop_Qt_6_8_2_llvm_mingw_64_bit-Debug/client_autogen/EWIEGA46WW/moc_singleton_client.cpp"
   "C:/Users/BlackDoDo/Documents/qt_TiMP/client/build/Desktop_Qt_6_8_2_llvm_mingw_64_bit-Debug/client_autogen/mocs_compilation.cpp"
   "C:/Users/BlackDoDo/Documents/qt_TiMP/client/main.cpp"
   "C:/Users/BlackDoDo/Documents/qt_TiMP/client/mainwindow.cpp"
