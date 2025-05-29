@@ -149,7 +149,7 @@ inline QString sha256(QString input) {
         .toUpper();
 }
 
-// Генерация случайной строки из символов латиницы и цифр
+/*// Генерация случайной строки из символов латиницы и цифр
 inline QString generateRandomString(int length) {
     QString letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
     QString result;
@@ -160,23 +160,7 @@ inline QString generateRandomString(int length) {
     }
 
     return result;
-}
-
-/*// Пример генерации задания
-inline QVariantMap token_sha_256() {
-    QVariantMap task;
-    QString password = generateRandomString(10);
-    QString hash = sha256(password);
-    task["text"] = "для строки " + password + " используйте метод sha256 для шифрования строки.";
-    task["answer"] = hash;
-    return task;
-}
-*/
-
-// Функция для проверки SHA-256 хэша от строки
-inline QString test_sha_256(QString password) {
-    return sha256(password);
-}
+}*/
 
 } // namespace SHA256
 

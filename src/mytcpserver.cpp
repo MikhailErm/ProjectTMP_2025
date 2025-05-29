@@ -43,6 +43,8 @@ void MyTcpServer::slotNewConnection()
     clients[clientId] = clientSocket;                 // Мультиклиент
     clientStates[clientId] = ClientState();           // Мультиклиент
 
+    socketToIdMap[clientSocket] = clientId;           // Сохраняем привязку сокета к clientId
+
     // Подключаем сигнал "данные пришли от клиента" к нашему слоту обработки данных
     connect(clientSocket, &QTcpSocket::readyRead, this, &MyTcpServer::slotServerRead); // Заменил на clientSocket (Мультиклиент)
 
@@ -50,7 +52,7 @@ void MyTcpServer::slotNewConnection()
     connect(clientSocket, &QTcpSocket::disconnected, this, &MyTcpServer::slotClientDisconnected); // Заменил на clientSocket (Мультиклиент)
 
     // Отправляем приветственное сообщение и инструкцию клиенту
-    clientSocket->write("\nPlease enter command (e.g. auth&login&password):\r\n"); // Заменил на clientSocket (Мультиклиент)
+    clientSocket->write("\nPlease enter command (e.g. register/auth&login&password):\r\n"); // Заменил на clientSocket (Мультиклиент)
 
     qDebug() << "Client connected:" << clientId;      // Мультиклиент
 }
@@ -125,13 +127,13 @@ void MyTcpServer::slotClientDisconnected()
     QTcpSocket *clientSocket = qobject_cast<QTcpSocket*>(sender());
     if (!clientSocket) return;
 
-    int clientId = clientSocket->socketDescriptor();  // Мультиклиент
+    int clientId = socketToIdMap.value(clientSocket, -1);  // Мультиклиент
 
     qDebug() << "Client disconnected:" << clientId;
 
     clients.remove(clientId);                         // Мультиклиент
     clientStates.remove(clientId);                    // Мультиклиент
+    socketToIdMap.remove(clientSocket);               // Мультиклиент
 
-    clientSocket->close();
     clientSocket->deleteLater();
 }

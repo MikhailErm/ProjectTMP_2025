@@ -9,7 +9,7 @@
 
 // Подключаем класс TCP-сокета (отвечает за связь с клиентом)
 #include <QTcpSocket>
-
+#include <QHash>
 #include <QMap>
 
 // Структура состояния клиента
@@ -35,6 +35,7 @@ private:
     QTcpServer *mTcpServer;
     QMap<int, QTcpSocket*> clients;           // (Мультиклиент) Сокеты клиентов по дескриптору
     QMap<int, ClientState> clientStates;      // (Мультиклиент) Состояние каждого клиента
+    QHash<QTcpSocket*, int> socketToIdMap;  // Привязка сокета к clientId
 };
 
 #endif // MYTCPSERVER_H
