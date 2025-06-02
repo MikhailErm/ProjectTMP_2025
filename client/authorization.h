@@ -34,8 +34,7 @@ private:
 private:
     // Приватные методы для проверок:
     bool is_auth(const QString &login, const QString &password);  // Проверка авторизации
-    bool is_reg(const QString &email, const QString &login,
-                const QString &password);  // Проверка регистрации
+    bool is_reg(const QString &login, const QString &password);  // Проверка регистрации
 };
 
 #endif // AUTHORIZATION_H

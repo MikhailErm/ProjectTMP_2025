@@ -29,11 +29,7 @@ protected:
     friend class SingletonDestroyer;
 public:
     static SingletonClient* getInstance();
-    void send_msg_to_server(QString query);
-signals:
-    void message_from_server(QString msg);
-private slots:
-    void slotServerRead();
+    QString send_msg_to_server(QString query);
 };
 
 #endif // SINGLETON_H

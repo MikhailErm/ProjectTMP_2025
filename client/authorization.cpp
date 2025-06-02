@@ -13,8 +13,6 @@ authorization::authorization(QWidget *parent)
 
     // Скрываем элементы, связанные с регистрацией (по умолчанию форма авторизации)
     ui->pushButton_registration->setVisible(false);
-    ui->label_email->setVisible(false);
-    ui->lineEdit_email->setVisible(false);
 }
 
 // Деструктор класса
@@ -33,11 +31,11 @@ bool authorization::is_auth(const QString &login, const QString &password)
 }
 
 // Метод проверки регистрации (заглушка)
-bool authorization::is_reg(const QString &email, const QString &login, const QString &password)
+bool authorization::is_reg(const QString &login, const QString &password)
 {
     // TODO: Заменить на реальную проверку через БД или сервер
     // Временная проверка - все поля не должны быть пустыми
-    return !email.isEmpty() && !login.isEmpty() && !password.isEmpty();
+    return !login.isEmpty() && !password.isEmpty();
 }
 
 // Слот обработки нажатия кнопки авторизации
@@ -56,6 +54,9 @@ void authorization::on_pushButton_authorization_clicked()
     // Проверка авторизации
     bool check = is_auth(login, password);
     if (check) {
+        QString msg = "auth&" + login + "&" + password;
+        SingletonClient::getInstance()->
+            send_msg_to_server(msg);
         QMessageBox::information(this, "Авторизация", "Авторизация прошла успешно.");
         this->close();  // Закрываем окно авторизации
 
@@ -76,8 +77,6 @@ void authorization::on_pushButton_change_clicked()
 
     // Переключаем видимость элементов:
     ui->pushButton_authorization->setVisible(flag);  // Кнопка авторизации
-    ui->label_email->setVisible(!flag);             // Метка для email
-    ui->lineEdit_email->setVisible(!flag);          // Поле ввода email
     ui->pushButton_registration->setVisible(!flag); // Кнопка регистрации
 }
 
@@ -85,20 +84,22 @@ void authorization::on_pushButton_change_clicked()
 void authorization::on_pushButton_registration_clicked()
 {
     // Получаем введенные данные
-    QString email = ui->lineEdit_email->text().trimmed();
     QString login = ui->lineEdit_login->text().trimmed();
     QString password = ui->lineEdit_password->text().trimmed();
 
     // Проверка на заполненность всех полей
-    if(email.isEmpty() || login.isEmpty() || password.isEmpty()) {
+    if(login.isEmpty() || password.isEmpty()) {
         QMessageBox::warning(this, "Ошибка", "Все поля должны быть заполнены");
         return;
     }
 
     // Попытка регистрации
-    bool check = is_reg(email, login, password);
+    bool check = is_reg(login, password);
     if (check) {
-        QMessageBox::information(this, "Регистрация", "Регистрация прошла успешно.");
+        QString msg = "register&" + login + "&" + password;
+        SingletonClient::getInstance()->
+            send_msg_to_server(msg);
+        //QMessageBox::information(this, "Регистрация", "Регистрация прошла успешно.");
         this->close();  // Закрываем окно регистрации
 
         // Создаем и показываем главное окно приложения

@@ -23,8 +23,7 @@ int main(int argc, char *argv[])
     // Пример отправки сообщения на сервер
     std::string msg;
     msg="hello";
-    SingletonClient::getInstance()->
-        send_msg_to_server(QString::fromStdString(msg));
+    qDebug()<< SingletonClient::getInstance()->send_msg_to_server(QString::fromStdString(msg));
     // Запускаем главный цикл обработки событий приложения
     // Этот вызов блокирует выполнение до закрытия приложения
     return a.exec();

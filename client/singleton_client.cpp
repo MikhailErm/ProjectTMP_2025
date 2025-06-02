@@ -17,11 +17,9 @@ SingletonClient* SingletonClient::getInstance() {
     return p_instance;
 }
 
-void SingletonClient::send_msg_to_server(QString query) {
+QString SingletonClient::send_msg_to_server(QString query) {
     mTcpSocket->write(query.toUtf8());
-}
-
-void SingletonClient::slotServerRead() {
+    mTcpSocket->waitForReadyRead();
     QString msg;
     while (mTcpSocket->bytesAvailable() > 0) {
         QByteArray array = mTcpSocket->readAll();
@@ -29,7 +27,7 @@ void SingletonClient::slotServerRead() {
     }
     msg = msg.trimmed(); // Удаляет \n, \r, пробелы в начале и конце
     qDebug() << msg;
-    emit message_from_server(msg);
+    return msg;
 }
 
 SingletonClient::~SingletonClient() {
