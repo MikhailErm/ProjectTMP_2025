@@ -108,6 +108,12 @@ PolynomialTask findMinimumTask() {
             task.minimum = minimum;
             task.valid = true;
             task.coefficients = coeffs;
+
+
+            qDebug() << "[GradientDescent Task]";
+            qDebug() << "Polynomial:" << task.equation;
+            qDebug() << "Coefficients:" << coeffs;
+            qDebug() << "Minimum (expected answer):" << task.minimum;
         }
     }
 

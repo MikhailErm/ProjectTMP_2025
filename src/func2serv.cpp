@@ -150,8 +150,9 @@ QByteArray parsing(QString msg, int sockId) {
         // Если пришло 1 число — проверяем через taskManager как раньше
         else if (parts.size() == 2) {
             bool ok = false;
-            QString answer = QString::number(parts[1].toDouble(&ok));
+            double numAnswer = parts[1].trimmed().toDouble(&ok);
             if (!ok) return "Invalid answer format";
+            QString answer = QString::number(numAnswer, 'f', 5);  // нормализуем строку
 
             auto& client = (*clientStatesPtr)[sockId];
             bool correct = taskManager.checkAnswer(client.login, answer);

@@ -23,8 +23,20 @@ TaskData TaskManager::createTask(const QString& login, TaskType type) {
 
 bool TaskManager::checkAnswer(const QString& login, QString answer) const {
     if (!clientTasks_.contains(login)) return false;
-    QString correct = clientTasks_.value(login).correctAnswer;
-    return (answer == correct);
+
+    bool okClient = false;
+    double clientVal = answer.toDouble(&okClient);
+    if (!okClient) return false;
+
+    QString correctStr = clientTasks_.value(login).correctAnswer;
+    bool okCorrect = false;
+    double correctVal = correctStr.toDouble(&okCorrect);
+    if (!okCorrect) return false;
+
+    int clientInt = static_cast<int>(std::round(clientVal));
+    int correctInt = static_cast<int>(std::round(correctVal));
+
+    return (clientInt == correctInt);
 }
 
 TaskType TaskManager::getLastTaskType(const QString& login) const {
@@ -41,7 +53,7 @@ TaskData TaskManager::generateGradientDescentTask() {
 
     if (polyTask.valid) {
         task.questionText = QString("Найдите минимум функции: %1").arg(polyTask.equation);
-        task.correctAnswer = QString::number(polyTask.minimum, 'f', 6); // ответ с 6 знаками после запятой
+        task.correctAnswer = QString::number(static_cast<int>(std::round(polyTask.minimum)));
     } else {
         // В случае ошибки — дай запасной вопрос
         task.questionText = "Не удалось сгенерировать функцию для градиентного спуска.";
