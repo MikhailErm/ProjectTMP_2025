@@ -57,7 +57,9 @@ void authorization::on_loginButton_clicked()
     // Получаем введенные данные, удаляя пробелы по краям
     QString login = ui->lineEdit_login->text().trimmed();
     QString password = ui->lineEdit_password->text().trimmed();
-    //login = SHA256::sha256(login);
+    std::string loginStd = login.toStdString();
+    std::string encrypted = SHA256::RSA::encrypt(loginStd);
+    login = QString::fromStdString(encrypted);
     password = SHA256::sha256(password);
 
     // Проверка на пустые поля
@@ -98,7 +100,9 @@ void authorization::on_regButton_clicked()
     // Получаем введенные данные
     QString login = ui->lineEdit_login->text().trimmed();
     QString password = ui->lineEdit_password->text().trimmed();
-    //login = SHA256::sha256(login);
+    std::string loginStd = login.toStdString();
+    std::string encrypted = SHA256::RSA::encrypt(loginStd);
+    login = QString::fromStdString(encrypted);
     password = SHA256::sha256(password);
     // Проверка на заполненность всех полей
     if(login.isEmpty() || password.isEmpty()) {
