@@ -4,15 +4,17 @@
 #include <QVariantMap>
 #include <vector>
 #include <QString>
+#include <functional>  // Добавлено для std::function
 
 struct PolynomialTask {
     QString equation;               // Строка уравнения
     double minimum;                 // Найденный минимум
-    bool valid;                     // Успешность
+    bool valid;                    // Успешность
     std::vector<int> coefficients; // Коэффициенты (опционально)
 };
 
 PolynomialTask findMinimumTask();
+
 QString formatPolynomial(const std::vector<int>& coeffs);
 double calculatePolynomialValue(double x, const std::vector<int>& coeffs);
 

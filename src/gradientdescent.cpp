@@ -1,11 +1,10 @@
-// gradientdescent.cpp
-
 #include "gradientdescent.h"
 #include <QRandomGenerator>
 #include <QtMath>
 #include <QDebug>
 #include <limits>
-#include <cmath> // Для std::isnan
+#include <cmath>   // Для std::isnan
+#include <functional> // Для std::function
 
 namespace {
 constexpr int MAX_ITERATIONS = 100000;
@@ -14,25 +13,35 @@ constexpr double MOMENTUM = 0.2;
 constexpr double EPSILON = 1e-8;
 constexpr double INITIAL_GUESS = 1.0;
 
+// Генерация случайного коэффициента от -5 до 5 включительно
 int randomCoefficient() {
     return QRandomGenerator::global()->bounded(-5, 6);
 }
 
+// Генерируем случайный полином 4-й степени (коэффициенты a,b,c,d,e)
 std::vector<int> generateValidPolynomial() {
     std::vector<int> coeffs(5);
     do {
         for(auto& c : coeffs) {
             c = randomCoefficient();
         }
-    } while(coeffs[0] == 0); // Полином 4-й степени гарантируем
-
+    } while(coeffs[0] == 0); // Обеспечиваем, что старший коэффициент != 0
     return coeffs;
 }
 
+// Вычисление производной полинома в точке x
 double calculateDerivative(double x, const std::vector<int>& coeffs) {
     return 4*coeffs[0]*x*x*x + 3*coeffs[1]*x*x + 2*coeffs[2]*x + coeffs[3];
 }
 
+// Вычисление значения полинома в точке x
+double calculatePolynomialValue(double x, const std::vector<int>& coeffs) {
+    // coeffs: a x^4 + b x^3 + c x^2 + d x + e
+    return coeffs[0]*std::pow(x,4) + coeffs[1]*std::pow(x,3) + coeffs[2]*x*x + coeffs[3]*x + coeffs[4];
+}
+
+// Поиск минимума функции методом градиентного спуска с моментумом
+// Возвращает округлённое до целого минимальное значение x, или NaN если минимум не найден
 double findMinimum(const std::vector<int>& coeffs) {
     double x = INITIAL_GUESS;
     double velocity = 0.0;
@@ -41,7 +50,7 @@ double findMinimum(const std::vector<int>& coeffs) {
     for(int i = 0; i < MAX_ITERATIONS; ++i) {
         double derivative = calculateDerivative(x, coeffs);
 
-        // Критерий остановки
+        // Критерий остановки: производная близка к 0 или не меняется
         if(std::abs(derivative) < EPSILON || std::abs(derivative - prev_derivative) < EPSILON) {
             break;
         }
@@ -51,15 +60,20 @@ double findMinimum(const std::vector<int>& coeffs) {
         prev_derivative = derivative;
     }
 
-    // Проверка на минимум (вторая производная > 0)
+    // Проверяем, что в найденной точке минимум (вторая производная > 0)
     double second_derivative = 12*coeffs[0]*x*x + 6*coeffs[1]*x + 2*coeffs[2];
-    return second_derivative > 0 ? x : std::numeric_limits<double>::quiet_NaN();
+    if (second_derivative > 0) {
+        return std::round(x); // Округляем до ближайшего целого
+    } else {
+        return std::numeric_limits<double>::quiet_NaN();
+    }
 }
 } // namespace
 
+// Форматируем полином для вывода
 QString formatPolynomial(const std::vector<int>& coeffs) {
     QStringList terms;
-    const QList<QString> powers = {"x⁴", "x³", "x²", "x", ""};
+    const QList<QString> powers = {"x^4", "x^3", "x^2", "x", ""};
 
     for(size_t i = 0; i < coeffs.size(); ++i) {
         if(coeffs[i] == 0) continue;
@@ -80,6 +94,7 @@ QString formatPolynomial(const std::vector<int>& coeffs) {
     return terms.join(" ").replace("+", " + ").replace("-", " - ");
 }
 
+// Основная функция генерации задания с минимизацией
 PolynomialTask findMinimumTask() {
     PolynomialTask task;
     task.valid = false;
@@ -92,7 +107,7 @@ PolynomialTask findMinimumTask() {
             task.equation = formatPolynomial(coeffs);
             task.minimum = minimum;
             task.valid = true;
-            task.coefficients = coeffs; // сохраняем коэффициенты
+            task.coefficients = coeffs;
         }
     }
 
@@ -104,6 +119,8 @@ PolynomialTask findMinimumTask() {
     return task;
 }
 
+// Реализация функции gradientDescent (если нужна)
+// Пример простой реализации метода градиентного спуска без момента
 
 QString gradientDescent(std::function<double(double)> f,
                         std::function<double(double)> df,
@@ -129,5 +146,5 @@ QString gradientDescent(std::function<double(double)> f,
     }
 
     double value = f(x);
-    return QString("x = %1, f(x) = %2").arg(x, 0, 'f', 6).arg(value, 0, 'f', 6);
+    return QString("x = %1").arg(x, 0, 'f', 6);
 }

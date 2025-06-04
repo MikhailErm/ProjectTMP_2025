@@ -1,120 +1,181 @@
 #include "func2serv.h"
 #include "databasemanager.h"
+#include "taskmanager.h"
 
-// Подключаем стандартные Qt-модули для работы со строками и SQL
-#include <QStringList>
-#include <QByteArray>
 #include <QSqlQuery>
 #include <QSqlError>
-#include <QVariant>
-#include <QMap> // Мультиклиент
-#include <QDebug> // Мультиклиент
-#include "mytcpserver.h" // Мультиклиент
+#include <QDebug>
 
-//Указатель на карту состояний клиентов  Мультиклиент
-QMap<int, ClientState>* clientStatesPtr = nullptr;
+QMap<int, ClientState> *clientStatesPtr = nullptr;
+TaskManager taskManager;
 
-//Инициализация: вызывается в main или сервере Мультиклиент
 void setClientStatesPointer(QMap<int, ClientState> *states) {
     clientStatesPtr = states;
 }
 
+QByteArray reg(QStringList params, int sockId) {
+    if (params.size() < 3) return "Usage: register&login&password";
+    QString login = params[1];
+    QString password = params[2];
 
-//  Авторизация
-// Функция для проверки логина и пароля пользователя
-QByteArray auth(QStringList params, int sockId) { //(Мультиклиент Добавил sockId
-    if (!clientStatesPtr || !clientStatesPtr->contains(sockId)) // Мультиклиент
-        return QByteArray("Internal server error"); // Мультиклиент
+    auto& db = DatabaseManager::instance();
+    if (!db.database().isOpen()) return "Database not connected";
 
-    // Проверка, что пришло хотя бы два параметра (логин и пароль)
-    if (params.size() < 2) {
-        return QByteArray("Error: missing login or password"); // Недостаточно аргументов
+    QSqlQuery query(db.database());
+    query.prepare("INSERT INTO users (login, password) VALUES (?, ?)");
+    query.addBindValue(login);
+    query.addBindValue(password);
+
+    if (!query.exec()) {
+        QString err = query.lastError().text();
+        if (err.contains("UNIQUE constraint failed"))
+            return "User already exists";
+        else
+            return "Registration failed: " + err.toUtf8();
     }
 
-    // Извлекаем логин и пароль
-    QString login = params[0];
-    QString password = params[1];
+    qDebug() << "User registered:" << login;
+    return "Registration successful";
+}
 
-    // Создаём SQL-запрос на выборку пользователя с заданным логином и паролем
-    QSqlQuery query(DatabaseManager::instance().database());
-    query.prepare("SELECT * FROM users WHERE login = :login AND password = :password");
-    query.bindValue(":login", login);
-    query.bindValue(":password", password);
+QByteArray auth(QStringList params, int sockId) {
+    if (params.size() < 3) return "Usage: auth&login&password";
+    QString login = params[1];
+    QString password = params[2];
 
-    // Если запрос выполнен и найдена запись — авторизация успешна
-    if (query.exec() && query.next()) {
-        (*clientStatesPtr)[sockId].isAuthorized = true; // Мультиклиент
-        (*clientStatesPtr)[sockId].login = login; // Мультиклиент
-        return QByteArray("Login successful! You can now use the echo server.");
+    auto& db = DatabaseManager::instance();
+    if (!db.database().isOpen()) return "Database not connected";
+
+    QSqlQuery query(db.database());
+    query.prepare("SELECT password FROM users WHERE login = ?");
+    query.addBindValue(login);
+
+    if (!query.exec() || !query.next()) return "User not found";
+
+    QString storedPassword = query.value(0).toString();
+    if (storedPassword == password) {
+        if (clientStatesPtr && clientStatesPtr->contains(sockId)) {
+            (*clientStatesPtr)[sockId].isAuthorized = true;
+            (*clientStatesPtr)[sockId].login = login;
+        }
+        qDebug() << "User authenticated:" << login;
+        return "Authentication successful";
     } else {
-        (*clientStatesPtr)[sockId].loginAttempt++; // Мультиклиент
-        // Иначе — ошибка авторизации
-        return QByteArray("Authorization failed. Try again.");
+        return "Wrong password";
     }
 }
 
-//  Регистрация
-// Функция для регистрации нового пользователя
-QByteArray reg(QStringList params, int sockId) { //(Мультиклиент Добавил sockId
-    Q_UNUSED(sockId); // пока не нужен
+QString all_stat() {
+    if (!clientStatesPtr) return QString("No data");
 
-    // Проверка на наличие логина и парол
-    if (params.size() < 2) {
-        return QByteArray("Error: missing login or password");
+    QString result;
+    for (auto it = clientStatesPtr->begin(); it != clientStatesPtr->end(); ++it) {
+        const ClientState &state = it.value();
+
+        QString ans1 = state.task1Correct ? "correct" : "wrong";
+        QString ans2 = state.task2Correct ? "correct" : "wrong";
+
+        // Формат: login answer&task1 answer&task2
+        result += state.login + " " + ans1 + " " + ans2 + "|";
     }
 
-    // Сохраняем логин и пароль из аргументов
-    QString login = params[0];
-    QString password = params[1];
-
-    // Проверка: существует ли пользователь с таким логином
-    QSqlQuery checkQuery(DatabaseManager::instance().database());
-    checkQuery.prepare("SELECT * FROM users WHERE login = :login");
-    checkQuery.bindValue(":login", login);
-    if (checkQuery.exec() && checkQuery.next()) {
-        // Если такой логин уже есть — возвращаем ошибку
-        return QByteArray("Error: user already exists");
-    }
-
-    // Вставка нового пользователя в таблицу
-    QSqlQuery insertQuery(DatabaseManager::instance().database());
-    insertQuery.prepare("INSERT INTO users (login, password) VALUES (:login, :password)");
-    insertQuery.bindValue(":login", login);
-    insertQuery.bindValue(":password", password);
-
-    // Проверка, успешно ли выполнен запрос
-    if (!insertQuery.exec()) {
-        return QByteArray("Error: failed to register user");
-    }
-
-    // Успешная регистрация
-    return QByteArray("User registered successfully. You can now login.");
+    return result;
 }
 
-// Обработка команд от клиента
-// Главная функция обработки текста команды
-QByteArray parsing(QString msg, int sockId)
-{
-    // Разбиваем строку на параметры по символу "&"
-    QStringList params = msg.split("&");
+// Проверка ответов task1 — 12 чисел
+bool checkTask1Answer(const QVector<double> &answers) {
+    // TODO: замени на правильные эталонные значения
+    static const QVector<double> correctAnswers = {
+        1.0, 2.0, 3.0,
+        4.0, 5.0, 6.0,
+        7.0, 8.0, 9.0,
+        10.0, 11.0, 12.0
+    };
 
-    // Первый элемент — имя команды (auth, register и т.д.)
-    QString func = params[0];
+    if (answers.size() != correctAnswers.size())
+        return false;
 
-    // Удаляем команду из списка, остаются только параметры
-    params.pop_front();
+    const double EPS = 1e-5;
+    for (int i = 0; i < answers.size(); ++i) {
+        if (qAbs(answers[i] - correctAnswers[i]) > EPS)
+            return false;
+    }
+    return true;
+}
 
-    // Выбор нужной функции по имени команды
-    if (func == "auth") {
-        return auth(params, sockId); // авторизация (Мультиклиент Добавил sockId)
-    } else if (func == "register") {
-        return reg(params, sockId); // регистрация (Мультиклиент Добавил sockId)
+QByteArray parsing(QString msg, int sockId) {
+    QStringList parts = msg.split('&', Qt::SkipEmptyParts);
+    if (parts.isEmpty()) return "Invalid command";
+
+    QString cmd = parts[0].toLower();
+
+    if (cmd == "register") return reg(parts, sockId);
+    if (cmd == "auth") return auth(parts, sockId);
+
+    if (!clientStatesPtr || !clientStatesPtr->contains(sockId))
+        return "Unknown client";
+    if (!(*clientStatesPtr)[sockId].isAuthorized)
+        return "Unauthorized. Please authenticate first.";
+
+    QString login = (*clientStatesPtr)[sockId].login;
+
+    if (cmd == "get_task1") {
+        auto task = taskManager.createTask(login, TaskType::Spline);
+        return task.questionText.toUtf8();
+    } else if (cmd == "get_task2") {
+        auto task = taskManager.createTask(login, TaskType::GradientDescent);
+        return task.questionText.toUtf8();
+    } else if (cmd == "answer") {
+        // Если пришло 12 чисел после команды answer (для task1)
+        if (parts.size() == 13) { // "answer" + 12 чисел
+            QVector<double> answers;
+            bool allOk = true;
+            for (int i = 1; i <= 12; ++i) {
+                bool ok = false;
+                double val = parts[i].toDouble(&ok);
+                if (!ok) {
+                    allOk = false;
+                    break;
+                }
+                answers.append(val);
+            }
+            if (!allOk) return "Invalid number format in answers";
+
+            bool correct = checkTask1Answer(answers);
+            auto& client = (*clientStatesPtr)[sockId];
+            client.task1Correct = correct;
+
+            return correct ? "Correct answer!" : "Incorrect answer, try again.";
+        }
+        // Если пришло 1 число — проверяем через taskManager как раньше
+        else if (parts.size() == 2) {
+            bool ok = false;
+            QString answer = QString::number(parts[1].toDouble(&ok));
+            if (!ok) return "Invalid answer format";
+
+            auto& client = (*clientStatesPtr)[sockId];
+            bool correct = taskManager.checkAnswer(client.login, answer);
+
+            if (taskManager.getLastTaskType(client.login) == TaskType::Spline)
+                client.task1Correct = correct;
+            else if (taskManager.getLastTaskType(client.login) == TaskType::GradientDescent)
+                client.task2Correct = correct;
+
+            return correct ? "Correct answer!" : "Incorrect answer, try again.";
+        }
+        else {
+            return "Invalid answer format";
+        }
+    } else if (cmd == "status") {
+        const auto& client = (*clientStatesPtr)[sockId];
+        return QString("Status for %1: Task1: %2 Task2: %3")
+            .arg(client.login)
+            .arg(client.task1Correct ? "t" : "f")
+            .arg(client.task2Correct ? "t" : "f")
+            .toUtf8();
+    } else if (cmd == "get_all_stat") {
+        return all_stat().toUtf8();
     }
 
-    if (clientStatesPtr && (*clientStatesPtr)[sockId].isAuthorized) { // Мультиклиент
-        return QByteArray("Echo: " + msg.toUtf8()); // Мультиклиент
-    }                                                  //Мультиклиент
-
-    // Если команда не распознана — возвращаем ошибку
-    return QByteArray("Unknown function");
+    return "Unknown command";
 }
