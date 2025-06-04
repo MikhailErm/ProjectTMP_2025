@@ -38,6 +38,9 @@ background: rgb(20, 30, 48)</string>
    <property name="gridStyle">
     <enum>Qt::PenStyle::SolidLine</enum>
    </property>
+   <property name="columnCount">
+    <number>3</number>
+   </property>
    <column>
     <property name="text">
      <string>USER</string>

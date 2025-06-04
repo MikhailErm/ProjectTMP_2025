@@ -26,7 +26,7 @@ bool task2::isStarted(){
 void task2::getTask(){
     if (!completed) {
         started=true;
-        QString function = SingletonClient::getInstance()->send_msg_to_server("get_task2").split(": ")[1];
+        QString function = (SingletonClient::getInstance()->send_msg_to_server("get_task2") + " : ").split(": ")[1];
         ui->label_function_data->setText(function);
     }
 }
