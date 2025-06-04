@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>result</class>
+ <widget class="QWidget" name="result">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>491</width>
+    <height>443</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: qlineargradient(
+    spread:pad, 
+    x1:0, y1:0, x2:1, y2:0, 
+    stop:0 rgba(0, 0, 0, 255), 
+    stop:1 rgba(20, 30, 48, 255)
+);</string>
+  </property>
+  <widget class="QTableWidget" name="resultTable">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>20</y>
+     <width>381</width>
+     <height>301</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 700 14pt &quot;Times New Roman&quot;;
+color: rgb(255, 255, 255);
+background: rgb(20, 30, 48)</string>
+   </property>
+   <property name="gridStyle">
+    <enum>Qt::PenStyle::SolidLine</enum>
+   </property>
+   <column>
+    <property name="text">
+     <string>USER</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>TASK1</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>TASK2</string>
+    </property>
+   </column>
+  </widget>
+  <widget class="QPushButton" name="displayResultButton">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>360</y>
+     <width>131</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 700 14pt &quot;Times New Roman&quot;;
+color: rgb(255, 255, 255);
+background: rgb(20, 30, 48)</string>
+   </property>
+   <property name="text">
+    <string>Refresh</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

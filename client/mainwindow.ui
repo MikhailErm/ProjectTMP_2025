@@ -26,43 +26,23 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>0</y>
+      <y>60</y>
       <width>781</width>
-      <height>561</height>
+      <height>531</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout">
-       <item>
-        <widget class="QPushButton" name="pushButton_exit">
-         <property name="baseSize">
-          <size>
-           <width>0</width>
-           <height>0</height>
-          </size>
-         </property>
+       <item alignment="Qt::AlignmentFlag::AlignHCenter">
+        <widget class="QPushButton" name="resultButton">
          <property name="styleSheet">
-          <string notr="true">font: 700 14pt &quot;Times New Roman&quot;;
-color: rgb(0, 0, 0);
-background-color: rgb(255, 255, 255);
-</string>
+          <string notr="true">font: 700 24pt &quot;Times New Roman&quot;;
+color: rgb(255, 255, 255);
+background: rgb(20, 30, 48)</string>
          </property>
          <property name="text">
-          <string>Exit</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="pushButton_result">
-         <property name="styleSheet">
-          <string notr="true">font: 700 14pt &quot;Times New Roman&quot;;
-color: rgb(0, 0, 0);
-background-color: rgb(255, 255, 255);
-</string>
-         </property>
-         <property name="text">
-          <string>Stats</string>
+          <string>Results</string>
          </property>
         </widget>
        </item>
@@ -71,7 +51,7 @@ background-color: rgb(255, 255, 255);
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_2">
        <item>
-        <widget class="QPushButton" name="pushButton_task1">
+        <widget class="QPushButton" name="task1Button">
          <property name="baseSize">
           <size>
            <width>0</width>
@@ -80,9 +60,8 @@ background-color: rgb(255, 255, 255);
          </property>
          <property name="styleSheet">
           <string notr="true">font: 700 14pt &quot;Times New Roman&quot;;
-color: rgb(0, 0, 0);
-background-color: rgb(255, 255, 255);
-</string>
+color: rgb(255, 255, 255);
+background: rgb(20, 30, 48)</string>
          </property>
          <property name="text">
           <string>Task1
@@ -91,7 +70,7 @@ background-color: rgb(255, 255, 255);
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="pushButton_task2">
+        <widget class="QPushButton" name="task2Button">
          <property name="baseSize">
           <size>
            <width>0</width>
@@ -100,9 +79,8 @@ background-color: rgb(255, 255, 255);
          </property>
          <property name="styleSheet">
           <string notr="true">font: 700 14pt &quot;Times New Roman&quot;;
-color: rgb(0, 0, 0);
-background-color: rgb(255, 255, 255);
-</string>
+color: rgb(255, 255, 255);
+background: rgb(20, 30, 48)</string>
          </property>
          <property name="text">
           <string>Task2
@@ -114,18 +92,33 @@ background-color: rgb(255, 255, 255);
      </item>
     </layout>
    </widget>
+   <widget class="QWidget" name="horizontalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>10</y>
+      <width>160</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_3">
+     <item>
+      <widget class="QLabel" name="label_loggedAs">
+       <property name="text">
+        <string>Logged as:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_login">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
   </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>800</width>
-     <height>21</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
  <connections/>

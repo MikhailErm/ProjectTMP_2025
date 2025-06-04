@@ -17,15 +17,19 @@ set(TS_FILES client_en_US.ts)
 
 set(PROJECT_SOURCES
         main.cpp
-        mainwindow.cpp
-        mainwindow.h
-        mainwindow.ui
+
+
+
         authorization.h
         authorization.cpp
         authorization.ui
-        functionClient.h
+
         singleton_client.cpp
         singleton_client.h
+
+
+
+
         ${TS_FILES}
 )
 
@@ -33,6 +37,15 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(client
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
+
+        task1.h task1.cpp task1.ui
+        task2.h task2.cpp task2.ui
+        mainwindow.h mainwindow.cpp mainwindow.ui
+        result.h result.cpp result.ui
+        myCrypt.h
+
+
+
     )
     qt_create_translation(QM_FILES ${CMAKE_SOURCE_DIR} ${TS_FILES})
 else()

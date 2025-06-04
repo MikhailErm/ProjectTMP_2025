@@ -1,8 +1,9 @@
 // authorization.cpp
 #include "authorization.h"
 #include "ui_authorization.h"
+#include "myCrypt.h"
 #include <QMessageBox>
-
+#include "singleton_client.h"
 // Конструктор класса формы авторизации
 authorization::authorization(QWidget *parent)
     : QWidget(parent)                // Инициализация базового класса
@@ -10,10 +11,11 @@ authorization::authorization(QWidget *parent)
     , ui_main(nullptr)               // Инициализация указателя на главное окно
 {
     ui->setupUi(this);  // Настройка пользовательского интерфейса
-
     // Скрываем элементы, связанные с регистрацией (по умолчанию форма авторизации)
-    ui->pushButton_registration->setVisible(false);
+    ui->regButton->setVisible(false);
+
 }
+QString authorization::usingLogin = "";
 
 // Деструктор класса
 authorization::~authorization()
@@ -21,29 +23,42 @@ authorization::~authorization()
     delete ui;        // Освобождаем память от UI
     delete ui_main;   // Освобождаем память от главного окна
 }
-
+QString authorization::getLogin() {
+    return usingLogin;
+}
 // Метод проверки авторизации (заглушка)
 bool authorization::is_auth(const QString &login, const QString &password)
 {
-    // TODO: Заменить на реальную проверку через БД или сервер
-    // Временная проверка - поля не должны быть пустыми
-    return !login.isEmpty() && !password.isEmpty();
+    QString msg = "auth&" + login + "&" + password;
+    QString answer;
+    answer = SingletonClient::getInstance()->send_msg_to_server(msg).trimmed();
+    if (answer=="Authorization failed. Try again.") {
+        return false;
+    }
+    else return true;
 }
 
 // Метод проверки регистрации (заглушка)
 bool authorization::is_reg(const QString &login, const QString &password)
 {
-    // TODO: Заменить на реальную проверку через БД или сервер
-    // Временная проверка - все поля не должны быть пустыми
-    return !login.isEmpty() && !password.isEmpty();
+    QString msg = "register&" + login + "&" + password;
+    QString answer;
+    answer = SingletonClient::getInstance()->send_msg_to_server(msg).trimmed();
+    if (answer=="User registered successfully. You can now login.") {
+        return true;
+    }
+    else return false;
+
 }
 
 // Слот обработки нажатия кнопки авторизации
-void authorization::on_pushButton_authorization_clicked()
+void authorization::on_loginButton_clicked()
 {
     // Получаем введенные данные, удаляя пробелы по краям
     QString login = ui->lineEdit_login->text().trimmed();
     QString password = ui->lineEdit_password->text().trimmed();
+    //login = SHA256::sha256(login);
+    password = SHA256::sha256(password);
 
     // Проверка на пустые поля
     if(login.isEmpty() || password.isEmpty()) {
@@ -54,12 +69,9 @@ void authorization::on_pushButton_authorization_clicked()
     // Проверка авторизации
     bool check = is_auth(login, password);
     if (check) {
-        QString msg = "auth&" + login + "&" + password;
-        SingletonClient::getInstance()->
-            send_msg_to_server(msg);
+        usingLogin=login;
         QMessageBox::information(this, "Авторизация", "Авторизация прошла успешно.");
         this->close();  // Закрываем окно авторизации
-
         // Создаем и показываем главное окно приложения
         ui_main = new MainWindow;
         ui_main->show();
@@ -70,23 +82,24 @@ void authorization::on_pushButton_authorization_clicked()
 }
 
 // Слот обработки нажатия кнопки смены режима (авторизация/регистрация)
-void authorization::on_pushButton_change_clicked()
+void authorization::on_changeButton_clicked()
 {
     // Определяем текущее состояние (видимость кнопки регистрации)
-    bool flag = ui->pushButton_registration->isVisible();
+    bool flag = ui->regButton->isVisible();
 
     // Переключаем видимость элементов:
-    ui->pushButton_authorization->setVisible(flag);  // Кнопка авторизации
-    ui->pushButton_registration->setVisible(!flag); // Кнопка регистрации
+    ui->loginButton->setVisible(flag);  // Кнопка авторизации
+    ui->regButton->setVisible(!flag); // Кнопка регистрации
 }
 
 // Слот обработки нажатия кнопки регистрации
-void authorization::on_pushButton_registration_clicked()
+void authorization::on_regButton_clicked()
 {
     // Получаем введенные данные
     QString login = ui->lineEdit_login->text().trimmed();
     QString password = ui->lineEdit_password->text().trimmed();
-
+    //login = SHA256::sha256(login);
+    password = SHA256::sha256(password);
     // Проверка на заполненность всех полей
     if(login.isEmpty() || password.isEmpty()) {
         QMessageBox::warning(this, "Ошибка", "Все поля должны быть заполнены");
@@ -96,15 +109,7 @@ void authorization::on_pushButton_registration_clicked()
     // Попытка регистрации
     bool check = is_reg(login, password);
     if (check) {
-        QString msg = "register&" + login + "&" + password;
-        SingletonClient::getInstance()->
-            send_msg_to_server(msg);
-        //QMessageBox::information(this, "Регистрация", "Регистрация прошла успешно.");
-        this->close();  // Закрываем окно регистрации
-
-        // Создаем и показываем главное окно приложения
-        ui_main = new MainWindow;
-        ui_main->show();
+        QMessageBox::information(this, "Регистрация", "Регистрация прошла успешно, авторизуйтесь.");
     }
     else {
         QMessageBox::warning(this, "Ошибка", "Регистрация не удалась.");

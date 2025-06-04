@@ -5,9 +5,7 @@
 #include <QWidget>          // Базовый класс для виджетов Qt
 #include <QMessageBox>      // Для отображения сообщений пользователю
 #include "mainwindow.h"     // Заголовочный файл главного окна приложения
-#include "functionClient.h" // Заголовочный файл с функциями клиента
 
-// Пространство имен для UI-класса, сгенерированного из .ui-файла
 namespace Ui {
 class authorization;
 }
@@ -20,17 +18,16 @@ class authorization : public QWidget
 public:
     explicit authorization(QWidget *parent = nullptr);  // Конструктор
     ~authorization();                                   // Деструктор
-
+    static QString getLogin();
 private slots:
     // Слоты - обработчики событий кнопок:
-    void on_pushButton_authorization_clicked();  // Клик по кнопке авторизации
-    void on_pushButton_change_clicked();         // Клик по кнопке смены (пароля?)
-    void on_pushButton_registration_clicked();   // Клик по кнопке регистрации
-
+    void on_loginButton_clicked();  // Клик по кнопке авторизации
+    void on_changeButton_clicked();         // Клик по кнопке смены
+    void on_regButton_clicked();   // Клик по кнопке регистрации
 private:
     Ui::authorization *ui;      // Указатель на сгенерированный UI-класс
-    MainWindow *ui_main;         // Указатель на главное окно приложения
-
+    MainWindow *ui_main;
+    static QString usingLogin;        // Указатель на главное окно приложения
 private:
     // Приватные методы для проверок:
     bool is_auth(const QString &login, const QString &password);  // Проверка авторизации
