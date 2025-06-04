@@ -65,7 +65,7 @@ background: rgb(20, 30, 48)</string>
          </property>
          <property name="text">
           <string>Task1
- Gradientniy spusk</string>
+ Metod splaynov</string>
          </property>
         </widget>
        </item>
@@ -84,7 +84,7 @@ background: rgb(20, 30, 48)</string>
          </property>
          <property name="text">
           <string>Task2
- Metod splaynov</string>
+ Gradientniy spusk</string>
          </property>
         </widget>
        </item>
@@ -104,6 +104,11 @@ background: rgb(20, 30, 48)</string>
     <layout class="QHBoxLayout" name="horizontalLayout_3">
      <item>
       <widget class="QLabel" name="label_loggedAs">
+       <property name="styleSheet">
+        <string notr="true">font: 700 14pt &quot;Times New Roman&quot;;
+color: rgb(255, 255, 255);
+background: rgb(20, 30, 48)</string>
+       </property>
        <property name="text">
         <string>Logged as:</string>
        </property>
@@ -111,8 +116,16 @@ background: rgb(20, 30, 48)</string>
      </item>
      <item>
       <widget class="QLabel" name="label_login">
+       <property name="styleSheet">
+        <string notr="true">font: 700 14pt &quot;Times New Roman&quot;;
+color: rgb(255, 255, 255);
+background: rgb(20, 30, 48)</string>
+       </property>
        <property name="text">
         <string/>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignmentFlag::AlignCenter</set>
        </property>
       </widget>
      </item>

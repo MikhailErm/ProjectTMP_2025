@@ -9,6 +9,11 @@ task1::task1(QWidget *parent)
     , ui(new Ui::task1)
 {
     ui->setupUi(this);
+     QString xy = SingletonClient::getInstance()->send_msg_to_server("get_task1");
+    QStringList nums = xy.split(" ");
+     ui->task_x_data->setText(nums[1] + " " + nums[2] + " " + nums[3] + " " + nums[4]);
+     ui->task_y_data->setText(nums[6] + " " + nums[7] + " " + nums[8] + " " + nums[9]);
+
 }
 
 task1::~task1()
@@ -33,7 +38,7 @@ void task1::on_answerButton_clicked()
     d1=ui->d1->text().trimmed().toDouble();
     d2=ui->d2->text().trimmed().toDouble();
 
-    QString msg = "task1" + authorization::getLogin() + " " +
+    QString msg = "answer&" +
                 QString::number(a0)+" "+QString::number(a1) +" "+QString::number(a2)
                   +" "+QString::number(b0)+" "+QString::number(b1)+" "+QString::number(b2)
                   +" "+QString::number(c0)+" "+QString::number(c1)+" "+QString::number(c2)

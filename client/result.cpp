@@ -14,18 +14,18 @@ result::~result()
 }
 
 void result::on_displayResultButton_clicked(){
-    QString answer = SingletonClient::getInstance()->send_msg_to_server("getTableData");
+    QString answer = SingletonClient::getInstance()->send_msg_to_server("get_all_stat");
     //answer = "user1 f t|user2 t t|user3 f f";
     QStringList rowlist = answer.split("|");
     for (int i=0; i<rowlist.count(); i++){
         QStringList data = rowlist[i].split(" ");
         //QString login = data[0];
         QString task1;
-        if (data[1]=="t") {task1="Correct";}
+        /*if (data[1]=="t") {task1="Correct";}
         else {task1="Wrong";}
         QString task2;
         if (data[2]=="t") {task2="Correct";}
-        else {task2="Wrong";}
+        else {task2="Wrong";}*/
 
         int row = ui->resultTable->rowCount();
         ui->resultTable->insertRow(row);

@@ -3,7 +3,7 @@
 #include <QDebug>
 // Подключаем сгенерированный заголовочный файл UI-формы
 #include "./ui_mainwindow.h"
-
+#include "authorization.h"
 // Конструктор главного окна приложения
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)    // Инициализация базового класса QMainWindow
@@ -14,6 +14,7 @@ MainWindow::MainWindow(QWidget *parent)
     task1 = false;
     task2 = false;
     result = false;
+    ui->label_login->setText(authorization::getLogin());
 }
 
 // Деструктор главного окна

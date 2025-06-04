@@ -15,6 +15,9 @@ public:
     explicit task2(QWidget *parent = nullptr);
     ~task2();
 
+private slots:
+    void on_answerButton_clicked(); //answerButton
+
 private:
     Ui::task2 *ui;
 };
