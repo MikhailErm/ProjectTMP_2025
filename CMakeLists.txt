@@ -31,7 +31,7 @@ set(ECHOSERVER_HDR
     include/func2serv.h
     include/databasemanager.h
     include/gradientdescent.h
-    include/sha256.hpp
+
     include/taskmanager.h
     include/spline.h        # Добавлен spline.h
 )
