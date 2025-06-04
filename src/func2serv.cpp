@@ -1,7 +1,7 @@
 #include "func2serv.h"
 #include "databasemanager.h"
 #include "taskmanager.h"
-
+#include "RSA.h"
 #include <QSqlQuery>
 #include <QSqlError>
 #include <QDebug>
@@ -13,9 +13,15 @@ void setClientStatesPointer(QMap<int, ClientState> *states) {
     clientStatesPtr = states;
 }
 
+
+
+
+
+
 QByteArray reg(QStringList params, int sockId) {
     if (params.size() < 3) return "Usage: register&login&password";
-    QString login = params[1];
+
+    QString login = QString::fromStdString(RSA::decrypt(params[1].toStdString(), "64507:65537"));
     QString password = params[2];
 
     auto& db = DatabaseManager::instance();

@@ -25,6 +25,7 @@ set(ECHOSERVER_SRC
     src/gradientdescent.cpp
     src/taskmanager.cpp
     src/spline.cpp          # Добавлен spline.cpp
+    src/RSA.cpp
 )
 
 set(ECHOSERVER_HDR
@@ -34,6 +35,7 @@ set(ECHOSERVER_HDR
 
     include/taskmanager.h
     include/spline.h        # Добавлен spline.h
+    include/RSA.h
 )
 
 # === Общая библиотека с логикой ===
@@ -50,6 +52,8 @@ add_executable(EchoServer
     src/main.cpp
     src/mytcpserver.cpp
     include/mytcpserver.h
+
+
     # spline.cpp сюда НЕ включаем — он в библиотеке
 )
 
