@@ -33,7 +33,7 @@ void task1::on_answerButton_clicked()
     d1=ui->d1->text().trimmed().toDouble();
     d2=ui->d2->text().trimmed().toDouble();
 
-    QString msg = authorization::getLogin() + " " +
+    QString msg = "task1" + authorization::getLogin() + " " +
                 QString::number(a0)+" "+QString::number(a1) +" "+QString::number(a2)
                   +" "+QString::number(b0)+" "+QString::number(b1)+" "+QString::number(b2)
                   +" "+QString::number(c0)+" "+QString::number(c1)+" "+QString::number(c2)
