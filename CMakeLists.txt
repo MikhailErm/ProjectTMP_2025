@@ -1,85 +1,79 @@
 cmake_minimum_required(VERSION 3.21)
 
-
 project(EchoServer LANGUAGES CXX)
-
 
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
 
-# Пробуем найти Qt6, если не найден — пробуем Qt5
-find_package(Qt6 COMPONENTS Network Core Sql Test QUIET) #  добавлен Sql, добавлен Test
+# === Qt Setup ===
+find_package(Qt6 COMPONENTS Network Core Sql Test QUIET)
 if(Qt6_FOUND)
     set(USE_QT6 TRUE)
 else()
-    find_package(Qt5 REQUIRED COMPONENTS Network Core Sql Test)#  добавлен Sql, добавлен Test
+    find_package(Qt5 REQUIRED COMPONENTS Network Core Sql Test)
     set(USE_QT6 FALSE)
 endif()
 
-# Указываем директорию, где находятся заголовочные файлы
+# === Include path ===
 include_directories(include)
 
-# Определяем список исходных файлов проекта
-set(SOURCES
-    src/main.cpp
-    src/mytcpserver.cpp
+# === Общие исходники ===
+set(ECHOSERVER_SRC
     src/func2serv.cpp
     src/databasemanager.cpp
-    include/mytcpserver.h
-    include/func2serv.h
-    include/databasemanager.h
+    src/gradientdescent.cpp
 )
 
-# Создаем исполняемый файл из исходников
-add_executable(EchoServer ${SOURCES}
-    include/sha256.hpp)
+set(ECHOSERVER_HDR
+    include/func2serv.h
+    include/databasemanager.h
+    include/gradientdescent.h
+    include/sha256.hpp
+)
 
-# Линкуем необходимые Qt-библиотеки
+# === Общая библиотека с логикой ===
+add_library(EchoServerLib ${ECHOSERVER_SRC} ${ECHOSERVER_HDR})
+
 if(USE_QT6)
-    target_link_libraries(EchoServer PRIVATE Qt6::Network Qt6::Core Qt6::Sql)  # ← Sql добавлен
+    target_link_libraries(EchoServerLib PRIVATE Qt6::Core Qt6::Sql Qt6::Network)
 else()
-    target_link_libraries(EchoServer PRIVATE Qt5::Network Qt5::Core Qt5::Sql)  # ← Sql добавлен
+    target_link_libraries(EchoServerLib PRIVATE Qt5::Core Qt5::Sql Qt5::Network)
 endif()
 
-# Специальные настройки линковки для Windows
+# === Исполняемый файл сервера ===
+add_executable(EchoServer
+    src/main.cpp
+    src/mytcpserver.cpp
+    include/mytcpserver.h
+)
+
+target_link_libraries(EchoServer PRIVATE EchoServerLib)
+
+if(USE_QT6)
+    target_link_libraries(EchoServer PRIVATE Qt6::Network Qt6::Core Qt6::Sql)
+else()
+    target_link_libraries(EchoServer PRIVATE Qt5::Network Qt5::Core Qt5::Sql)
+endif()
+
 if(WIN32)
-    target_link_options(EchoServer PRIVATE
-        "$<$<CONFIG:Debug>:-Wl,--subsystem,console>"
-    )
+    target_link_options(EchoServer PRIVATE "$<$<CONFIG:Debug>:-Wl,--subsystem,console>")
 endif()
 
-# Тесты
+# === Юнит-тесты ===
 enable_testing()
 
 file(GLOB UNITTEST_SOURCES UnitTest/*.cpp)
 source_group("UnitTest Files" FILES ${UNITTEST_SOURCES})
 
-add_executable(UnitTest
-    ${UNITTEST_SOURCES}
-    src/func2serv.cpp
-    src/databasemanager.cpp
-    include/func2serv.h
-    include/databasemanager.h
-)
+add_executable(UnitTest ${UNITTEST_SOURCES})
 
+target_link_libraries(UnitTest PRIVATE EchoServerLib)
 
 if(USE_QT6)
-    target_link_libraries(UnitTest PRIVATE
-        Qt6::Test
-        Qt6::Core
-        Qt6::Sql
-        Qt6::Network
-    )
+    target_link_libraries(UnitTest PRIVATE Qt6::Test Qt6::Core Qt6::Sql Qt6::Network)
 else()
-    target_link_libraries(UnitTest PRIVATE
-        Qt5::Test
-        Qt5::Core
-        Qt5::Sql
-        Qt5::Network
-    )
+    target_link_libraries(UnitTest PRIVATE Qt5::Test Qt5::Core Qt5::Sql Qt5::Network)
 endif()
-
-
 
 add_test(NAME UnitTest COMMAND UnitTest)
