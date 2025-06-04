@@ -14,10 +14,16 @@ class task1 : public QWidget
 public:
     explicit task1(QWidget *parent = nullptr);
     ~task1();
+    void getTask();
+    bool isStarted();
+    bool isCompleted();
+
 private slots:
     void on_answerButton_clicked(); //answerButton
 private:
     Ui::task1 *ui;
+    bool completed = false;
+    bool started = false;
 };
 
 #endif // TASK1_H

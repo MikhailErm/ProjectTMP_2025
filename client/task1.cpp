@@ -1,7 +1,6 @@
 #include "task1.h"
 #include "singleton_client.h"
 #include "ui_task1.h"
-#include "authorization.h"
 #include <QDebug>
 #include <QMessageBox>
 task1::task1(QWidget *parent)
@@ -9,18 +8,31 @@ task1::task1(QWidget *parent)
     , ui(new Ui::task1)
 {
     ui->setupUi(this);
-     QString xy = SingletonClient::getInstance()->send_msg_to_server("get_task1");
-    QStringList nums = xy.split(" ");
-     ui->task_x_data->setText(nums[1] + " " + nums[2] + " " + nums[3] + " " + nums[4]);
-     ui->task_y_data->setText(nums[6] + " " + nums[7] + " " + nums[8] + " " + nums[9]);
-
+    completed=false;
+    started=false;
 }
 
 task1::~task1()
 {
     delete ui;
 }
+bool task1::isCompleted(){
+    return completed;
+}
+bool task1::isStarted(){
+    return started;
+}
 
+void task1::getTask(){
+    if (!completed)
+    {
+    started=true;
+    QString xy = SingletonClient::getInstance()->send_msg_to_server("get_task1") + "  1  2  3  4  5  6  7  8  9  10";
+    QStringList nums = xy.split("  ");
+    ui->task_x_data->setText(nums[1] + " " + nums[2] + " " + nums[3] + " " + nums[4]);
+    ui->task_y_data->setText(nums[6] + " " + nums[7] + " " + nums[8] + " " + nums[9]);
+    }
+}
 void task1::on_answerButton_clicked()
 {
     double a0, a1, a2, b0, b1, b2, c0, c1, c2, d0, d1, d2;
@@ -61,7 +73,7 @@ void task1::on_answerButton_clicked()
     ui->answerButton->setEnabled(false);
 
     QMessageBox::information(this, "Задача закончена", "Ответы отправлены.");
-
+    completed=true;
     this->close();
 
 

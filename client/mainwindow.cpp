@@ -15,6 +15,9 @@ MainWindow::MainWindow(QWidget *parent)
     task2 = false;
     result = false;
     ui->label_login->setText(authorization::getLogin());
+    ui_task1 = new class task1;
+    ui_task2 = new class task2;
+
 }
 
 // Деструктор главного окна
@@ -37,23 +40,30 @@ void MainWindow::on_resultButton_clicked()
 }
 
 void MainWindow::on_task1Button_clicked(){
-    if (task1) {
+    if((ui_task1->isStarted()==ui_task2->isStarted()) or ui_task2->isCompleted() or ui_task1->isStarted()){
+   if (ui_task1->isStarted()) {
         ui_task1->show();
     }
     else{
-        ui_task1 = new class task1;
+
+        ui_task1->getTask();
         task1=true;
         ui_task1->show();
+
     }
+   }
 }
 void MainWindow::on_task2Button_clicked(){
-    if (task2) {
+    if ((ui_task1->isStarted()==ui_task2->isStarted()) or ui_task1->isCompleted() or ui_task2->isStarted()) {
+    if (ui_task2->isStarted()) {
         ui_task2->show();
     }
     else{
         ui_task2 = new class task2;
+        ui_task2->getTask();
         task2=true;
         ui_task2->show();
+    }
     }
 
 }

@@ -21,11 +21,7 @@ void result::on_displayResultButton_clicked(){
         QStringList data = rowlist[i].split(" ");
         //QString login = data[0];
         QString task1;
-        /*if (data[1]=="t") {task1="Correct";}
-        else {task1="Wrong";}
         QString task2;
-        if (data[2]=="t") {task2="Correct";}
-        else {task2="Wrong";}*/
 
         int row = ui->resultTable->rowCount();
         ui->resultTable->insertRow(row);

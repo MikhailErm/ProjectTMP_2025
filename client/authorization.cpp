@@ -32,10 +32,10 @@ bool authorization::is_auth(const QString &login, const QString &password)
     QString msg = "auth&" + login + "&" + password;
     QString answer;
     answer = SingletonClient::getInstance()->send_msg_to_server(msg).trimmed();
-    if (answer=="Authorization failed. Try again.") {
-        return false;
+    if (answer=="Authentication successful") {
+        return true;
     }
-    else return true;
+    else return false;
 }
 
 // Метод проверки регистрации (заглушка)
@@ -44,7 +44,7 @@ bool authorization::is_reg(const QString &login, const QString &password)
     QString msg = "register&" + login + "&" + password;
     QString answer;
     answer = SingletonClient::getInstance()->send_msg_to_server(msg).trimmed();
-    if (answer=="User registered successfully. You can now login.") {
+    if (answer=="Registration successful") {
         return true;
     }
     else return false;
