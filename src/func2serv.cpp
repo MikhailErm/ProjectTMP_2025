@@ -79,16 +79,13 @@ QString all_stat() {
         QString ans1 = state.task1Correct ? "correct" : "wrong";
         QString ans2 = state.task2Correct ? "correct" : "wrong";
 
-        // Формат: login answer&task1 answer&task2
         result += state.login + " " + ans1 + " " + ans2 + "|";
     }
 
     return result;
 }
 
-// Проверка ответов task1 — 12 чисел
 bool checkTask1Answer(const QVector<double> &answers) {
-    // TODO: замени на правильные эталонные значения
     static const QVector<double> correctAnswers = {
         1.0, 2.0, 3.0,
         4.0, 5.0, 6.0,
@@ -108,7 +105,9 @@ bool checkTask1Answer(const QVector<double> &answers) {
 }
 
 QByteArray parsing(QString msg, int sockId) {
-    QStringList parts = msg.split('&', Qt::SkipEmptyParts);
+    // Исправленная строка для Qt5:
+    QStringList parts = msg.split('&', QString::SkipEmptyParts);
+    
     if (parts.isEmpty()) return "Invalid command";
 
     QString cmd = parts[0].toLower();
@@ -130,8 +129,7 @@ QByteArray parsing(QString msg, int sockId) {
         auto task = taskManager.createTask(login, TaskType::GradientDescent);
         return task.questionText.toUtf8();
     } else if (cmd == "answer") {
-        // Если пришло 12 чисел после команды answer (для task1)
-        if (parts.size() == 13) { // "answer" + 12 чисел
+        if (parts.size() == 13) {
             QVector<double> answers;
             bool allOk = true;
             for (int i = 1; i <= 12; ++i) {
@@ -151,12 +149,11 @@ QByteArray parsing(QString msg, int sockId) {
 
             return correct ? "Correct answer!" : "Incorrect answer, try again.";
         }
-        // Если пришло 1 число — проверяем через taskManager как раньше
         else if (parts.size() == 2) {
             bool ok = false;
             double numAnswer = parts[1].trimmed().toDouble(&ok);
             if (!ok) return "Invalid answer format";
-            QString answer = QString::number(numAnswer, 'f', 5);  // нормализуем строку
+            QString answer = QString::number(numAnswer, 'f', 5);
 
             auto& client = (*clientStatesPtr)[sockId];
             bool correct = taskManager.checkAnswer(client.login, answer);
