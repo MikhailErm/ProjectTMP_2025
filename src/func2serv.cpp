@@ -16,7 +16,7 @@ void setClientStatesPointer(QMap<int, ClientState> *states) {
 QByteArray reg(QStringList params, int sockId) {
     if (params.size() < 3) return "Usage: register&login&password";
 
-    QString login = QString::fromStdString(RSA::decrypt(params[1].toStdString(), "64507:65537"));
+    QString login = QString::fromStdString(RSA::decrypt(params[1].toStdString(), "64507:41473"));
     QString password = params[2];
 
     auto& db = DatabaseManager::instance();
