@@ -56,6 +56,7 @@ void authorization::on_loginButton_clicked()
 {
     // Получаем введенные данные, удаляя пробелы по краям
     QString login = ui->lineEdit_login->text().trimmed();
+    QString oldLogin = login;
     QString password = ui->lineEdit_password->text().trimmed();
     std::string loginStd = login.toStdString();
     std::string encrypted = SHA256::RSA::encrypt(loginStd);
@@ -71,7 +72,7 @@ void authorization::on_loginButton_clicked()
     // Проверка авторизации
     bool check = is_auth(login, password);
     if (check) {
-        usingLogin=login;
+        usingLogin=oldLogin;
         QMessageBox::information(this, "Авторизация", "Авторизация прошла успешно.");
         this->close();  // Закрываем окно авторизации
         // Создаем и показываем главное окно приложения
