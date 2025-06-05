@@ -106,7 +106,7 @@ bool checkTask1Answer(const QVector<double> &answers) {
 
 QByteArray parsing(QString msg, int sockId) {
     // Исправленная строка для Qt5:
-    QStringList parts = msg.split('&', QString::SkipEmptyParts);
+    QStringList parts = msg.split('&', Qt::SkipEmptyParts);
     
     if (parts.isEmpty()) return "Invalid command";
 
