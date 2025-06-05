@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>task1</class>
+ <widget class="QWidget" name="task1">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>592</width>
+    <height>502</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: qlineargradient(
+    spread:pad, 
+    x1:0, y1:0, x2:1, y2:0, 
+    stop:0 rgba(0, 0, 0, 255), 
+    stop:1 rgba(20, 30, 48, 255)
+);</string>
+  </property>
+  <widget class="QWidget" name="horizontalLayoutWidget_2">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>430</y>
+     <width>591</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_2">
+    <item alignment="Qt::AlignmentFlag::AlignHCenter">
+     <widget class="QPushButton" name="answerButton">
+      <property name="styleSheet">
+       <string notr="true">font: 700 20pt &quot;Times New Roman&quot;;
+color: rgb(255, 255, 255);
+background: rgb(20, 30, 48);
+</string>
+      </property>
+      <property name="text">
+       <string>Answer</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="horizontalLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>589</width>
+     <height>83</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QLabel" name="task_text">
+      <property name="styleSheet">
+       <string notr="true">font: 700 20pt &quot;Times New Roman&quot;;
+color: rgb(255, 255, 255);
+background: rgb(20, 30, 48);
+</string>
+      </property>
+      <property name="text">
+       <string>TASK1: SPLINES</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout_5">
+      <item>
+       <widget class="QLabel" name="task_x">
+        <property name="styleSheet">
+         <string notr="true">font: 700 20pt &quot;Times New Roman&quot;;
+color: rgb(255, 255, 255);
+background: rgb(20, 30, 48);
+</string>
+        </property>
+        <property name="text">
+         <string>X</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="task_y">
+        <property name="styleSheet">
+         <string notr="true">font: 700 20pt &quot;Times New Roman&quot;;
+color: rgb(255, 255, 255);
+background: rgb(20, 30, 48);
+</string>
+        </property>
+        <property name="text">
+         <string>Y</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QLabel" name="task_x_data">
+        <property name="styleSheet">
+         <string notr="true">font: 700 20pt &quot;Times New Roman&quot;;
+color: rgb(255, 255, 255);
+background: rgb(20, 30, 48);
+</string>
+        </property>
+        <property name="text">
+         <string>1 2 3 4</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="task_y_data">
+        <property name="styleSheet">
+         <string notr="true">font: 700 20pt &quot;Times New Roman&quot;;
+color: rgb(255, 255, 255);
+background: rgb(20, 30, 48);
+</string>
+        </property>
+        <property name="text">
+         <string>1 2 3 4</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="gridLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>170</y>
+     <width>571</width>
+     <height>179</height>
+    </rect>
+   </property>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="1">
+     <widget class="QLabel" name="a">
+      <property name="styleSheet">
+       <string notr="true">font: 700 14pt &quot;Times New Roman&quot;;
+color: rgb(255, 255, 255);
+background: rgb(20, 30, 48);
+</string>
+      </property>
+      <property name="text">
+       <string>A</string>
+      </property>
+      <property name="scaledContents">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="2">
+     <widget class="QLineEdit" name="b1"/>
+    </item>
+    <item row="0" column="2">
+     <widget class="QLabel" name="b">
+      <property name="styleSheet">
+       <string notr="true">font: 700 14pt &quot;Times New Roman&quot;;
+color: rgb(255, 255, 255);
+background: rgb(20, 30, 48)</string>
+      </property>
+      <property name="text">
+       <string>B</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QLineEdit" name="a0"/>
+    </item>
+    <item row="2" column="3">
+     <widget class="QLineEdit" name="c1"/>
+    </item>
+    <item row="3" column="3">
+     <widget class="QLineEdit" name="c2"/>
+    </item>
+    <item row="0" column="3">
+     <widget class="QLabel" name="c">
+      <property name="styleSheet">
+       <string notr="true">font: 700 14pt &quot;Times New Roman&quot;;
+color: rgb(255, 255, 255);
+background: rgb(20, 30, 48)</string>
+      </property>
+      <property name="text">
+       <string>C</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0">
+     <widget class="QLabel" name="segment2">
+      <property name="styleSheet">
+       <string notr="true">font: 700 14pt &quot;Times New Roman&quot;;
+color: rgb(255, 255, 255);
+background: rgb(20, 30, 48)</string>
+      </property>
+      <property name="text">
+       <string>SEGMENT 2</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QLabel" name="segment0">
+      <property name="styleSheet">
+       <string notr="true">font: 700 14pt &quot;Times New Roman&quot;;
+color: rgb(255, 255, 255);
+background: rgb(20, 30, 48)</string>
+      </property>
+      <property name="text">
+       <string>SEGMENT 0</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="4">
+     <widget class="QLineEdit" name="d1"/>
+    </item>
+    <item row="2" column="0">
+     <widget class="QLabel" name="segment1">
+      <property name="styleSheet">
+       <string notr="true">font: 700 14pt &quot;Times New Roman&quot;;
+color: rgb(255, 255, 255);
+background: rgb(20, 30, 48)</string>
+      </property>
+      <property name="text">
+       <string>SEGMENT 1</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0">
+     <widget class="QLabel" name="segment">
+      <property name="styleSheet">
+       <string notr="true">font: 700 14pt &quot;Times New Roman&quot;;
+color: rgb(255, 255, 255);
+background: rgb(20, 30, 48)</string>
+      </property>
+      <property name="text">
+       <string>SEGMENTS</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="1">
+     <widget class="QLineEdit" name="a1"/>
+    </item>
+    <item row="1" column="3">
+     <widget class="QLineEdit" name="c0"/>
+    </item>
+    <item row="1" column="2">
+     <widget class="QLineEdit" name="b0"/>
+    </item>
+    <item row="3" column="2">
+     <widget class="QLineEdit" name="b2"/>
+    </item>
+    <item row="1" column="4">
+     <widget class="QLineEdit" name="d0">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="readOnly">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="1">
+     <widget class="QLineEdit" name="a2"/>
+    </item>
+    <item row="0" column="4">
+     <widget class="QLabel" name="d">
+      <property name="styleSheet">
+       <string notr="true">font: 700 14pt &quot;Times New Roman&quot;;
+color: rgb(255, 255, 255);
+background: rgb(20, 30, 48)</string>
+      </property>
+      <property name="text">
+       <string>D</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="4">
+     <widget class="QLineEdit" name="d2"/>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

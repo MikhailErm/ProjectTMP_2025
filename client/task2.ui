@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>task2</class>
+ <widget class="QWidget" name="task2">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>728</width>
+    <height>526</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: qlineargradient(
+    spread:pad, 
+    x1:0, y1:0, x2:1, y2:0, 
+    stop:0 rgba(0, 0, 0, 255), 
+    stop:1 rgba(20, 30, 48, 255)
+);</string>
+  </property>
+  <widget class="QWidget" name="horizontalLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>730</width>
+     <height>83</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QLabel" name="task_text">
+      <property name="styleSheet">
+       <string notr="true">font: 700 20pt &quot;Times New Roman&quot;;
+color: rgb(255, 255, 255);
+background: rgb(20, 30, 48);
+</string>
+      </property>
+      <property name="text">
+       <string>TASK2: 
+Gradientny spusk</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="horizontalLayoutWidget_2">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>390</y>
+     <width>731</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_2">
+    <item alignment="Qt::AlignmentFlag::AlignHCenter">
+     <widget class="QPushButton" name="answerButton">
+      <property name="styleSheet">
+       <string notr="true">font: 700 20pt &quot;Times New Roman&quot;;
+color: rgb(255, 255, 255);
+background: rgb(20, 30, 48);
+</string>
+      </property>
+      <property name="text">
+       <string>Answer</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="horizontalLayoutWidget_3">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>120</y>
+     <width>731</width>
+     <height>81</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_3">
+    <item>
+     <widget class="QLabel" name="label_function">
+      <property name="styleSheet">
+       <string notr="true">font: 700 20pt &quot;Times New Roman&quot;;
+color: rgb(255, 255, 255);
+background: rgb(20, 30, 48);
+</string>
+      </property>
+      <property name="text">
+       <string>Функция:</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="label_function_data">
+      <property name="styleSheet">
+       <string notr="true">font: 700 20pt &quot;Times New Roman&quot;;
+color: rgb(255, 255, 255);
+background: rgb(20, 30, 48);
+</string>
+      </property>
+      <property name="text">
+       <string>1x^4  - 2x^3  + 1x^2</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="horizontalLayoutWidget_4">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>260</y>
+     <width>731</width>
+     <height>81</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_4">
+    <item>
+     <widget class="QLabel" name="label_result">
+      <property name="styleSheet">
+       <string notr="true">font: 700 20pt &quot;Times New Roman&quot;;
+color: rgb(255, 255, 255);
+background: rgb(20, 30, 48);
+</string>
+      </property>
+      <property name="text">
+       <string>Результат градиентного
+ спуска (x):</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item alignment="Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignVCenter">
+     <widget class="QLineEdit" name="input_x">
+      <property name="styleSheet">
+       <string notr="true">font: 700 20pt &quot;Times New Roman&quot;;
+color: rgb(255, 255, 255);
+background: rgb(20, 30, 48);
+</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
