@@ -13,11 +13,6 @@ void setClientStatesPointer(QMap<int, ClientState> *states) {
     clientStatesPtr = states;
 }
 
-
-
-
-
-
 QByteArray reg(QStringList params, int sockId) {
     if (params.size() < 3) return "Usage: register&login&password";
 
@@ -46,28 +41,31 @@ QByteArray reg(QStringList params, int sockId) {
 
 QByteArray auth(QStringList params, int sockId) {
     if (params.size() < 3) return "Usage: auth&login&password";
-    QString login = params[1];
-    QString password = params[2];
 
-    auto& db = DatabaseManager::instance();
-    if (!db.database().isOpen()) return "Database not connected";
+    try {
+        QString login = QString::fromStdString(RSA::decrypt(params[1].toStdString(), "64507:65537"));
+        QString password = params[2];
 
-    QSqlQuery query(db.database());
-    query.prepare("SELECT password FROM users WHERE login = ?");
-    query.addBindValue(login);
+        auto& db = DatabaseManager::instance();
+        if (!db.database().isOpen()) return "Database not connected";
 
-    if (!query.exec() || !query.next()) return "User not found";
+        QSqlQuery query(db.database());
+        query.prepare("SELECT password FROM users WHERE login = ?");
+        query.addBindValue(login);
 
-    QString storedPassword = query.value(0).toString();
-    if (storedPassword == password) {
-        if (clientStatesPtr && clientStatesPtr->contains(sockId)) {
-            (*clientStatesPtr)[sockId].isAuthorized = true;
-            (*clientStatesPtr)[sockId].login = login;
+        if (!query.exec() || !query.next()) return "User not found";
+
+        QString storedPassword = query.value(0).toString();
+        if (storedPassword == password) {
+            if (clientStatesPtr) {
+                (*clientStatesPtr)[sockId].isAuthorized = true;
+                (*clientStatesPtr)[sockId].login = login;
+            }
+            return "Authentication successful";
         }
-        qDebug() << "User authenticated:" << login;
-        return "Authentication successful";
-    } else {
         return "Wrong password";
+    } catch (...) {
+        return "Decryption error";
     }
 }
 
