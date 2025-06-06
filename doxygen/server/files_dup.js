@@ -1,10 +1,11 @@
 var files_dup =
 [
-    [ "databasemanager.h", "databasemanager_8h.html", "databasemanager_8h" ],
-    [ "func2serv.h", "func2serv_8h.html", "func2serv_8h" ],
-    [ "gradientdescent.h", "gradientdescent_8h.html", "gradientdescent_8h" ],
-    [ "mytcpserver.h", "mytcpserver_8h.html", "mytcpserver_8h" ],
-    [ "RSA.h", "_r_s_a_8h.html", "_r_s_a_8h" ],
-    [ "spline.h", "spline_8h.html", "spline_8h" ],
-    [ "taskmanager.h", "taskmanager_8h.html", "taskmanager_8h" ]
+    [ "databasemanager.cpp", "databasemanager_8cpp.html", null ],
+    [ "func2serv.cpp", "func2serv_8cpp.html", "func2serv_8cpp" ],
+    [ "gradientdescent.cpp", "gradientdescent_8cpp.html", "gradientdescent_8cpp" ],
+    [ "main.cpp", "main_8cpp.html", "main_8cpp" ],
+    [ "mytcpserver.cpp", "mytcpserver_8cpp.html", null ],
+    [ "RSA.cpp", "_r_s_a_8cpp.html", null ],
+    [ "spline.cpp", "spline_8cpp.html", "spline_8cpp" ],
+    [ "taskmanager.cpp", "taskmanager_8cpp.html", null ]
 ];
