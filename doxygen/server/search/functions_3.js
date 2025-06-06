@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['encrypt_0',['encrypt',['../class_r_s_a.html#a02935c284497e7007bd6332f220ed154',1,'RSA']]]
+  ['findminimumtask_0',['findMinimumTask',['../gradientdescent_8cpp.html#a49a7beb0fbc7fa551ab69a771668f783',1,'gradientdescent.cpp']]],
+  ['formatpolynomial_1',['formatPolynomial',['../gradientdescent_8cpp.html#ad69c376273bac3cd77dffa3cf2fb0cb7',1,'gradientdescent.cpp']]]
 ];
